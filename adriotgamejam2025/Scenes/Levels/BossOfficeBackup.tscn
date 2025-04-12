@@ -1,10 +1,10 @@
-[gd_scene load_steps=10 format=4 uid="uid://cm2yr8yd50ytg"]
+[gd_scene load_steps=10 format=4 uid="uid://cq5ulj6u7ahem"]
 
-[ext_resource type="TileSet" uid="uid://cqgnw2rd2kdmo" path="res://Art/TileSets/OfficeTileMap.tres" id="1_hm1xh"]
-[ext_resource type="Texture2D" uid="uid://dci8y1wffvnt8" path="res://Art/Player.png" id="3_eh5fx"]
-[ext_resource type="Texture2D" uid="uid://dv1ac8ij4hho1" path="res://Art/Boss.png" id="3_o770h"]
-[ext_resource type="Script" uid="uid://bcddsipoquuxj" path="res://Scenes/Menu/main_menu.gd" id="4_eh5fx"]
-[ext_resource type="Texture2D" uid="uid://dlwmpb6l4163u" path="res://Assets/moderninteriors-win/4_User_Interface_Elements/UI_16x16.png" id="4_o770h"]
+[ext_resource type="TileSet" uid="uid://cqgnw2rd2kdmo" path="res://Art/TileSets/OfficeTileMap.tres" id="1_28lad"]
+[ext_resource type="Texture2D" uid="uid://dci8y1wffvnt8" path="res://Art/Player.png" id="2_nm1wm"]
+[ext_resource type="Texture2D" uid="uid://dv1ac8ij4hho1" path="res://Art/Boss.png" id="3_sdbls"]
+[ext_resource type="Texture2D" uid="uid://dlwmpb6l4163u" path="res://Assets/moderninteriors-win/4_User_Interface_Elements/UI_16x16.png" id="4_u1b0j"]
+[ext_resource type="Script" uid="uid://bcddsipoquuxj" path="res://Scenes/Menu/main_menu.gd" id="5_cg0si"]
 
 [sub_resource type="Animation" id="Animation_o770h"]
 resource_name = "Intro"
@@ -69,20 +69,6 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
-}
-tracks/5/type = "method"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("MainMenu")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(8),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"_change_scene"
-}]
 }
 
 [sub_resource type="Animation" id="Animation_w2vd1"]
@@ -199,33 +185,33 @@ color = Color(0, 0, 0, 1)
 [node name="floor" type="TileMapLayer" parent="."]
 z_index = -2
 tile_map_data = PackedByteArray("AAAAAAAAAAAHAAEAAAAAAAEAAAAHAAIAAAAAAAIAAAAHAAIAAAAAAAMAAAAHAAIAAAAAAAQAAAAHAAIAAAAAAAUAAAAHAAIAAAAAAAYAAAAHAAIAAAAAAAcAAAAHAAIAAAAAAAgAAAAHAAIAAAABAAAAAAAAAAkAAAABAAEAAAAAAAoAAAABAAIAAAAKAAcAAAABAAMAAAALAAgAAAABAAQAAAALAAgAAAABAAUAAAALAAgAAAABAAYAAAALAAgAAAABAAcAAAALAAgAAAABAAgAAAAKAAgAAAACAAEAAAABAAoAAAACAAIAAAALAAcAAAACAAMAAAALAAgAAAACAAQAAAALAAgAAAACAAUAAAALAAgAAAACAAYAAAALAAgAAAACAAcAAAALAAgAAAACAAgAAAALAAgAAAADAAAAAAABAAkAAAADAAEAAAABAAoAAAADAAIAAAAMAAgAAAADAAMAAAALAAgAAAADAAQAAAALAAgAAAADAAUAAAALAAgAAAADAAYAAAALAAgAAAADAAcAAAALAAgAAAADAAgAAAALAAgAAAAEAAAAAAABAAkAAAAEAAEAAAABAAoAAAAEAAIAAAAMAAgAAAAEAAMAAAALAAgAAAAEAAQAAAALAAgAAAAEAAUAAAALAAgAAAAEAAYAAAALAAgAAAAEAAcAAAALAAgAAAAEAAgAAAALAAgAAAAFAAAAAAABAAkAAAAFAAEAAAABAAoAAAAFAAIAAAALAAcAAAAFAAMAAAALAAgAAAAFAAQAAAAMAAgAAAAFAAUAAAAMAAgAAAAFAAYAAAAMAAgAAAAFAAcAAAALAAgAAAAFAAgAAAALAAgAAAAGAAAAAAABAAkAAAAGAAEAAAABAAoAAAAGAAIAAAALAAcAAAAGAAMAAAALAAgAAAAGAAQAAAAMAAgAAAAGAAUAAAAMAAgAAAAGAAYAAAAMAAgAAAAGAAcAAAALAAgAAAAGAAgAAAALAAgAAAAHAAAAAAABAAkAAAAHAAEAAAABAAoAAAAHAAIAAAALAAcAAAAHAAMAAAALAAgAAAAHAAQAAAAMAAgAAAAHAAUAAAAMAAgAAAAHAAYAAAAMAAgAAAAHAAcAAAALAAgAAAAHAAgAAAALAAgAAAAIAAAAAAABAAkAAAAIAAEAAAABAAoAAAAIAAIAAAALAAcAAAAIAAMAAAALAAgAAAAIAAQAAAAMAAgAAAAIAAUAAAAMAAgAAAAIAAYAAAAMAAgAAAAIAAcAAAALAAgAAAAIAAgAAAALAAgAAAAJAAAAAAABAAkAAAAJAAEAAAABAAoAAAAJAAIAAAALAAcAAAAJAAMAAAALAAgAAAAJAAQAAAAMAAgAAAAJAAUAAAAMAAgAAAAJAAYAAAAMAAgAAAAJAAcAAAALAAgAAAAJAAgAAAALAAgAAAAKAAAAAAABAAkAAAAKAAEAAAABAAoAAAAKAAIAAAALAAcAAAAKAAMAAAALAAgAAAAKAAQAAAALAAgAAAAKAAUAAAALAAgAAAAKAAYAAAALAAgAAAAKAAcAAAALAAgAAAAKAAgAAAALAAgAAAALAAAAAAABAAkAAAALAAEAAAABAAoAAAALAAIAAAALAAcAAAALAAMAAAALAAgAAAALAAQAAAALAAgAAAALAAUAAAALAAgAAAALAAYAAAALAAgAAAALAAcAAAALAAgAAAALAAgAAAALAAgAAAAMAAAAAAABAAkAAAAMAAEAAAABAAoAAAAMAAIAAAALAAcAAAAMAAMAAAALAAgAAAAMAAQAAAALAAgAAAAMAAUAAAALAAgAAAAMAAYAAAALAAgAAAAMAAcAAAALAAgAAAAMAAgAAAALAAgAAAANAAAAAAACAAkAAAANAAEAAAACAAoAAAANAAIAAAALAAcAAAANAAMAAAAKAAgAABANAAQAAAAKAAgAABANAAUAAAAKAAgAABANAAYAAAAKAAgAABANAAcAAAAKAAgAABANAAgAAAAKAAgAABAOAAAAAAAJAAEAAAAOAAEAAAAJAAIAAAAOAAIAAAAJAAIAAAAOAAMAAAAJAAIAAAAOAAQAAAAJAAIAAAAOAAUAAAAJAAIAAAAOAAYAAAAJAAIAAAAOAAcAAAAJAAIAAAAOAAgAAAAJAAIAAAAOAAkAAAAJAAMAAAANAAkAAAAIAAMAAAAMAAkAAAAIAAMAAAALAAkAAAAIAAMAAAAKAAkAAAAIAAMAAAABAAkAAAAIAAMAAAACAAkAAAAIAAMAAAADAAkAAAAIAAMAAAAEAAkAAAAIAAMAAAAAAAkAAAAHAAMAAAAFAAkAAAABAAEAAAAJAAkAAAACAAEAAAAGAAkAAAAMAAgAAAAHAAkAAAAMAAgAAAAIAAkAAAAMAAgAAAACAAAAAAABAAkAAAA=")
-tile_set = ExtResource("1_hm1xh")
+tile_set = ExtResource("1_28lad")
 
 [node name="chair" type="TileMapLayer" parent="."]
 z_index = -1
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AAAHAAMAAQABAAgAAAAHAAQAAQABAAkAAAA=")
-tile_set = ExtResource("1_hm1xh")
+tile_set = ExtResource("1_28lad")
 
 [node name="furniture" type="TileMapLayer" parent="."]
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AAABAAAAAQAGAAwAAAABAAEAAQAGAA0AAAABAAIAAQAHACIAAAABAAMAAQAHACMAAAABAAQAAQAHACMAAAABAAUAAQAHACMAAAABAAYAAQAHACMAAAABAAcAAQAHACQAAAACAAAAAQAPAAAAAAACAAEAAQAPAAEAAAADAAEAAQAOACsAAAADAAIAAQAIACgAAAAEAAAAAQAPACoAAAAEAAEAAQAPACsAAAAEAAIAAQAJACgAAAAFAAAAAQAHAAoAAAAFAAEAAQAHAAsAAAAFAAQAAQAEAB4AAAAFAAUAAQAEAB8AAAAGAAAAAQAIAAoAAAAGAAEAAQAIAAsAAAAGAAQAAQAFAB4AAAAGAAUAAQAFAB8AAAAHAAQAAQAFAB4AAAAIAAQAAQAFAB4AAAAIAAUAAQAFAB8AAAAJAAQAAQAGAB4AAAAJAAUAAQAGAB8AAAAKAAAAAQAJAAwAAAAKAAEAAQAJAA0AAAALAAAAAQAKAAwAAAALAAEAAQAKAA0AAAAMAAMAAQAEACIAAAAMAAQAAQAEACMAAAAMAAUAAQAFACMAAAAMAAYAAQAFACQAAAANAAMAAQAFACIAAAANAAQAAQAHACMAAAANAAUAAQAGACMAAAANAAYAAQAGACQAAAAHAAUAAQAFAB8AAAA=")
-tile_set = ExtResource("1_hm1xh")
+tile_set = ExtResource("1_28lad")
 
 [node name="keyboard" type="TileMapLayer" parent="."]
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AAAHAAQAAQAMAAoAAAANAAUAAQAMAAoAAFA=")
-tile_set = ExtResource("1_hm1xh")
+tile_set = ExtResource("1_28lad")
 
 [node name="over furniture" type="TileMapLayer" parent="."]
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AAABAAMAAQABAA4AABABAAUAAQABAA8AAAAFAAQAAQAGAAoAAAAFAAUAAQAGAAsAAAAGAAQAAQANAAoAAAAHAAAAAQAHAAwAAAAHAAEAAQAHAA0AAAAHAAIAAQAHAA4AAAAHAAQAAQAOAAoAAAAHAAUAAQAOAAsAAAAIAAAAAQAIAAwAAAAIAAEAAQAIAA0AAAAIAAIAAQAIAA4AAAAIAAQAAQALABcAAAAIAAUAAQALABgAAAAJAAAAAQAGAAcAAAAJAAEAAQAGAAgAAAAJAAIAAQAGAAkAAAAMAAAAAQAIAA8AABAMAAEAAQAIABAAABAMAAIAAQAIABEAABAMAAMAAQANAC4AAAAMAAQAAQAJACIAAAAMAAUAAQAJACMAAAANAAAAAQAHAA8AABANAAEAAQAHABAAABANAAIAAQAHABEAABANAAMAAQADAAwAAAANAAQAAQALACMAAAANAAUAAQALACQAAAANAAYAAQALACUAAAA=")
-tile_set = ExtResource("1_hm1xh")
+tile_set = ExtResource("1_28lad")
 
 [node name="over over furniture" type="TileMapLayer" parent="."]
 y_sort_enabled = true
 tile_map_data = PackedByteArray("AAABAAAAAQAGAAwAAAABAAEAAQAGAA0AAAABAAIAAQAGAA4AAAA=")
-tile_set = ExtResource("1_hm1xh")
+tile_set = ExtResource("1_28lad")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -234,14 +220,14 @@ libraries = {
 
 [node name="Player" type="Sprite2D" parent="."]
 position = Vector2(120, 169)
-texture = ExtResource("3_eh5fx")
+texture = ExtResource("2_nm1wm")
 hframes = 56
 vframes = 20
 
 [node name="Boss" type="Sprite2D" parent="."]
 z_index = -1
 position = Vector2(120, 77)
-texture = ExtResource("3_o770h")
+texture = ExtResource("3_sdbls")
 offset = Vector2(0.0500031, -10.92)
 hframes = 56
 vframes = 20
@@ -250,7 +236,7 @@ frame = 802
 [node name="SpeechBubble" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(128, 111)
-texture = ExtResource("4_o770h")
+texture = ExtResource("4_u1b0j")
 hframes = 18
 vframes = 8
 frame = 79
@@ -269,7 +255,7 @@ color = Color(0, 0, 0, 1)
 
 [node name="MainMenu" type="CanvasLayer" parent="."]
 visible = false
-script = ExtResource("4_eh5fx")
+script = ExtResource("5_cg0si")
 
 [node name="Buttons" type="VBoxContainer" parent="MainMenu"]
 anchors_preset = 8
@@ -298,8 +284,12 @@ text = "Settings"
 layout_mode = 2
 text = "Quit"
 
+[node name="Animation Timer" type="Timer" parent="MainMenu"]
+wait_time = 9.0
+
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 
 [connection signal="pressed" from="MainMenu/Buttons/PlayButton" to="MainMenu" method="_on_play_button_pressed"]
 [connection signal="pressed" from="MainMenu/Buttons/SettingsButton" to="MainMenu" method="_on_settings_button_pressed"]
 [connection signal="pressed" from="MainMenu/Buttons/QuitButton" to="MainMenu" method="_on_quit_button_pressed"]
+[connection signal="timeout" from="MainMenu/Animation Timer" to="MainMenu" method="_change_scene"]

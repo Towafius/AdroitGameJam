@@ -1,4 +1,4 @@
-extends ProgressBar
+extends TextureProgressBar
 
 @onready var decay_rate_label: Label = $DecayRate
 
