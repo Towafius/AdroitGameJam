@@ -25,5 +25,5 @@ tile_map_data = PackedByteArray("AAABAAMAAQABAA4AABABAAUAAQABAA8AAAAFAAQAAQAGAAo
 tile_set = ExtResource("1_hm1xh")
 
 [node name="over over furniture" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAAHAAUAAQABAAgAAAAHAAYAAQABAAkAAAA=")
+tile_map_data = PackedByteArray("AAAHAAUAAQABAAgAAAAHAAYAAQABAAkAAAABAAAAAQAGAAwAAAABAAEAAQAGAA0AAAABAAIAAQAGAA4AAAA=")
 tile_set = ExtResource("1_hm1xh")
