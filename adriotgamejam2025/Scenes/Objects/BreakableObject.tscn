@@ -3,22 +3,26 @@
 [ext_resource type="Script" uid="uid://bpw32hn6qd5dt" path="res://Scenes/Objects/breakable_object.gd" id="1_6bgdp"]
 [ext_resource type="Texture2D" uid="uid://bsk13gq6a6sob" path="res://Assets/Modern_Office_Revamped_v1.2/4_Modern_Office_singles/16x16/Modern_Office_Singles_321.png" id="2_u7637"]
 [ext_resource type="Texture2D" uid="uid://b2favhtgqktkp" path="res://Assets/Modern_Office_Revamped_v1.2/4_Modern_Office_singles/16x16/Modern_Office_Singles_322.png" id="3_u7637"]
-[ext_resource type="Texture2D" uid="uid://ivlvsk824fkg" path="res://Assets/Modern_Office_Revamped_v1.2/4_Modern_Office_singles/16x16/Modern_Office_Singles_324.png" id="4_b6ikd"]
+[ext_resource type="Texture2D" uid="uid://dgulw6rixcahh" path="res://Art/dustparticle.png" id="4_b6ikd"]
 
 [sub_resource type="Curve" id="Curve_s3q3b"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.62, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 3
+_data = [Vector2(0, 0.820225), 0.0, 0.0, 0, 0, Vector2(0.419118, 0.674157), 0.0, 0.0, 0, 0, Vector2(0.772059, 0.0898877), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
 
 [sub_resource type="CurveTexture" id="CurveTexture_jg0c0"]
 curve = SubResource("Curve_s3q3b")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_obm2q"]
 particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 15.0
 direction = Vector3(0, -1, 0)
-spread = 60.0
-initial_velocity_min = 50.0
-initial_velocity_max = 50.0
-gravity = Vector3(0, 98, 0)
+spread = 30.0
+initial_velocity_min = 9.0
+initial_velocity_max = 9.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.8
+color = Color(0.991164, 0.991164, 0.991164, 1)
 alpha_curve = SubResource("CurveTexture_jg0c0")
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b6ikd"]
@@ -70,10 +74,11 @@ grow_vertical = 2
 value = 100.0
 show_percentage = false
 
-[node name="BreakParticles" type="GPUParticles2D" parent="."]
+[node name="SmokeParticles" type="GPUParticles2D" parent="."]
 emitting = false
-amount = 4
+amount = 6
 texture = ExtResource("4_b6ikd")
+lifetime = 2.0
 one_shot = true
 explosiveness = 1.0
 process_material = SubResource("ParticleProcessMaterial_obm2q")

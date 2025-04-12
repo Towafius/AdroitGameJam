@@ -7,7 +7,7 @@ class_name BreakableObject
 @onready var unbroken_sprite: Sprite2D = $UnbrokenSprite
 @onready var broken_sprite: Sprite2D = $BrokenSprite
 @onready var health_bar: ProgressBar = $HealthBar
-@onready var break_particles: GPUParticles2D = $BreakParticles
+@onready var smoke_particles: GPUParticles2D = $SmokeParticles
 
 var health:int
 
@@ -25,7 +25,7 @@ func initialize_health_bar():
 func break_object():
 	unbroken_sprite.hide()
 	broken_sprite.show()
-	break_particles.emitting = true
+	smoke_particles.emitting = true
 
 func take_damage(damage_taken:int):
 	#Set new health

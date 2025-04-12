@@ -43,7 +43,6 @@ func _handle_attack_frame():
 	for body in attack_area.get_overlapping_bodies():
 		if body is BreakableObject:
 			if !(body in attack_exceptions):
-				print("damage dealt")
 				body.take_damage(50)
 				attack_exceptions.append(body)
 	
