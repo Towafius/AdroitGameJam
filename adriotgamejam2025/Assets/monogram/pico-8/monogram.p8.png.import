@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cswh3ln6miwqe"
-path="res://.godot/imported/RagebarFill.png-6951450148ba08abfbc26b6625a3889e.ctex"
+uid="uid://c1krvy4ynrce8"
+path="res://.godot/imported/monogram.p8.png-9bf8c498a1f3393550dcb712637a9012.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/RagebarFill.png"
-dest_files=["res://.godot/imported/RagebarFill.png-6951450148ba08abfbc26b6625a3889e.ctex"]
+source_file="res://Assets/monogram/pico-8/monogram.p8.png"
+dest_files=["res://.godot/imported/monogram.p8.png-9bf8c498a1f3393550dcb712637a9012.ctex"]
 
 [params]
 

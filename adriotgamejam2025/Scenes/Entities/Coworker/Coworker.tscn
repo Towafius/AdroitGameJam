@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://bsm8yjukd2qwo"]
+[gd_scene load_steps=14 format=3 uid="uid://bsm8yjukd2qwo"]
 
 [ext_resource type="Texture2D" uid="uid://cmwail0hd7c58" path="res://Art/Coworker.png" id="1_6hupx"]
+[ext_resource type="Script" uid="uid://d227ue4agpo3f" path="res://Scenes/Entities/Coworker/coworker.gd" id="1_4873w"]
 
 [sub_resource type="Animation" id="Animation_htcer"]
 length = 0.001
@@ -179,6 +180,7 @@ radius = 2.0
 height = 6.0
 
 [node name="Coworker" type="CharacterBody2D"]
+script = ExtResource("1_4873w")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -196,3 +198,6 @@ vframes = 20
 position = Vector2(0, -2)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_4873w")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+simplify_path = true

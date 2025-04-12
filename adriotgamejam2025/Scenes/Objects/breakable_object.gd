@@ -29,12 +29,13 @@ func break_object():
 	health_bar.hide()
 
 func take_damage(damage_taken:int):
-	#Set new health
-	health -= damage_taken
-	
-	#Change Fill Bar
-	health_bar.value=health
-	health_bar.show()
+	if(health>0):
+		#Set new health
+		health -= damage_taken
+		
+		#Change Fill Bar
+		health_bar.value=health
+		health_bar.show()
 	
 	#Break if lower than 0
 	if (health<=0):

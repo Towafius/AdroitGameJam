@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://bpw32hn6qd5dt" path="res://Scenes/Objects/breakable_object.gd" id="1_4fclc"]
 [ext_resource type="Texture2D" uid="uid://b2201rvjs35x" path="res://Assets/Modern_Office_Revamped_v1.2/4_Modern_Office_singles/16x16/Modern_Office_Singles_167.png" id="2_1gits"]
 [ext_resource type="Texture2D" uid="uid://cmmberij6whlm" path="res://Art/brokenobjects/broken trash can.png" id="3_gjq74"]
-[ext_resource type="Texture2D" uid="uid://lyclhvbbmlnn" path="res://Art/ObjectHealthBar.png" id="4_13vml"]
-[ext_resource type="Texture2D" uid="uid://bv537hm1166xv" path="res://Art/ObjectHealthBarFill.png" id="5_j5er2"]
+[ext_resource type="Texture2D" uid="uid://lyclhvbbmlnn" path="res://Art/UI/ObjectHealthBar.png" id="4_13vml"]
+[ext_resource type="Texture2D" uid="uid://bv537hm1166xv" path="res://Art/UI/ObjectHealthBarFill.png" id="5_j5er2"]
 [ext_resource type="Texture2D" uid="uid://dgulw6rixcahh" path="res://Art/dustparticle.png" id="6_muuhn"]
 
 [sub_resource type="Curve" id="Curve_s3q3b"]

@@ -1,12 +1,14 @@
-[gd_scene load_steps=24 format=3 uid="uid://beiqmv6x223mi"]
+[gd_scene load_steps=26 format=3 uid="uid://beiqmv6x223mi"]
 
 [ext_resource type="Script" uid="uid://co4mhxtf1ubni" path="res://Scenes/Entities/Player/player.gd" id="1_a3d8c"]
 [ext_resource type="Script" uid="uid://m2xddct1li7e" path="res://Scenes/Entities/Player/rage_meter.gd" id="2_htcer"]
 [ext_resource type="Texture2D" uid="uid://bpvomlgf8da3s" path="res://Art/Player.png" id="2_mtuoh"]
 [ext_resource type="Script" uid="uid://dgbgdpglom8q6" path="res://Scenes/Entities/Player/weapon.gd" id="3_mtuoh"]
-[ext_resource type="Texture2D" uid="uid://ef7pe5x3xa0d" path="res://Art/RagebarOutline.png" id="4_75l7y"]
+[ext_resource type="Texture2D" uid="uid://ef7pe5x3xa0d" path="res://Art/UI/RagebarOutline.png" id="4_75l7y"]
 [ext_resource type="Texture2D" uid="uid://383pqc2hpso0" path="res://Art/bat.png" id="4_htcer"]
-[ext_resource type="Texture2D" uid="uid://cswh3ln6miwqe" path="res://Art/RagebarFill.png" id="5_5o8lj"]
+[ext_resource type="Texture2D" uid="uid://cswh3ln6miwqe" path="res://Art/UI/RagebarFill.png" id="5_5o8lj"]
+[ext_resource type="Theme" uid="uid://ngnx3f64w8bv" path="res://Art/Base_theme.tres" id="7_5o8lj"]
+[ext_resource type="Texture2D" uid="uid://c7kmtgdm340oh" path="res://Art/UI/BrownPanel.png" id="8_i4twt"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mtuoh"]
 radius = 3.0
@@ -273,18 +275,13 @@ wait_time = 0.6
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
-offset_right = 40.0
-offset_bottom = 40.0
-
 [node name="RageMeter" type="TextureProgressBar" parent="CanvasLayer"]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -277.5
-offset_top = 7.0
-offset_right = 277.5
-offset_bottom = 34.0
+offset_left = -111.0
+offset_right = 111.0
+offset_bottom = 21.0
 grow_horizontal = 2
 value = 50.0
 nine_patch_stretch = true
@@ -303,13 +300,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
+offset_left = -24.0
+offset_top = -12.5
+offset_right = 24.0
+offset_bottom = 13.5
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("7_5o8lj")
 text = "RAGE"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="DecayRate" type="Label" parent="CanvasLayer/RageMeter"]
 layout_mode = 1
@@ -318,14 +318,65 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -49.5
-offset_top = -11.5
-offset_right = -9.5
-offset_bottom = 11.5
+offset_left = -49.0
+offset_top = -12.5
+offset_right = -9.0
+offset_bottom = 13.5
 grow_horizontal = 0
 grow_vertical = 2
+theme = ExtResource("7_5o8lj")
 text = "-3"
 horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="GameOverScreen" type="Control" parent="CanvasLayer"]
+visible = false
+modulate = Color(1, 1, 1, 0.784314)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("7_5o8lj")
+
+[node name="TextureRect" type="NinePatchRect" parent="CanvasLayer/GameOverScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -63.0
+offset_top = -13.0
+offset_right = 64.0
+offset_bottom = 94.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_i4twt")
+region_rect = Rect2(15, 16, 97, 96)
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/GameOverScreen/TextureRect"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer/GameOverScreen/TextureRect/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureButton2" type="TextureButton" parent="CanvasLayer/GameOverScreen/TextureRect/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureButton3" type="TextureButton" parent="CanvasLayer/GameOverScreen/TextureRect/VBoxContainer"]
+layout_mode = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -344,6 +395,5 @@ position = Vector2(0, -4)
 shape = SubResource("CapsuleShape2D_a3d8c")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(3, 3)
 
 [connection signal="timeout" from="WeaponPivot/Attack_Timer" to="WeaponPivot" method="_on_attack_timer_timeout"]

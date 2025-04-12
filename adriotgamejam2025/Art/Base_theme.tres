@@ -1,0 +1,11 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://ngnx3f64w8bv"]
+
+[ext_resource type="Texture2D" uid="uid://bg6cp1wfgc0kv" path="res://Art/UI/Slider.png" id="1_4coec"]
+[ext_resource type="FontFile" uid="uid://dbjh0gvpbymx6" path="res://Assets/monogram/ttf/monogram.ttf" id="1_h76kg"]
+
+[resource]
+default_font = ExtResource("1_h76kg")
+default_font_size = 16
+HSlider/icons/grabber = ExtResource("1_4coec")
+HSlider/icons/grabber_disabled = ExtResource("1_4coec")
+HSlider/icons/grabber_highlight = ExtResource("1_4coec")

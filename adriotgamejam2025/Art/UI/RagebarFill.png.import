@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ef7pe5x3xa0d"
-path="res://.godot/imported/RagebarOutline.png-63beafabab1e5f01a0642146985f8528.ctex"
+uid="uid://cswh3ln6miwqe"
+path="res://.godot/imported/RagebarFill.png-2cedab93f6ee25202aed8831540e8dba.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/RagebarOutline.png"
-dest_files=["res://.godot/imported/RagebarOutline.png-63beafabab1e5f01a0642146985f8528.ctex"]
+source_file="res://Art/UI/RagebarFill.png"
+dest_files=["res://.godot/imported/RagebarFill.png-2cedab93f6ee25202aed8831540e8dba.ctex"]
 
 [params]
 
