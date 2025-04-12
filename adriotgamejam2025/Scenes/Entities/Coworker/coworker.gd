@@ -23,6 +23,16 @@ func _ready() -> void:
 	state = states.FOLLOW
 
 func _physics_process(delta: float) -> void:
+	if state == states.FOLLOW:
+		if self.global_position.distance_to(player.global_position) < 40:
+			state = states.ATTACK
+			print("Changing to attack")
+	
+	elif state == states.ATTACK:
+		if self.global_position.distance_to(player.global_position) >= 40:
+			state = states.FOLLOW
+			print("Changing to follow")
+			
 	var next_position = nav_agent.get_next_path_position()
 	#var distance = global_position.distance_to(player.global_position)
 	var direction:Vector2=Vector2.ZERO
@@ -31,6 +41,8 @@ func _physics_process(delta: float) -> void:
 			direction = global_position.direction_to(next_position)
 		states.RETREAT:
 			direction = -global_position.direction_to(next_position)
+		states.ATTACK:
+			direction = global_position.direction_to(player.global_position)
 	
 	if direction:
 		velocity.x = direction.x * current_speed
@@ -51,15 +63,6 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_nav_refresh_timeout() -> void:
-	if state == states.FOLLOW:
-		if self.global_position.distance_to(player.global_position) < 5:
-			state = states.ATTACK
-			print("Changing to attack")
-	
-	elif state == states.ATTACK:
-		if self.global_position.distance_to(player.global_position) >= 5:
-			state = states.FOLLOW
-			print("Changing to follow")
 	nav_agent.target_position = player.global_position
 
 
