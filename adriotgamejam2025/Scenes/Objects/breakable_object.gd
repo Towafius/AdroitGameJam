@@ -2,4 +2,48 @@ extends Node2D
 
 class_name BreakableObject
 
-@export var health:int
+@export var max_health:int = 100
+
+@onready var unbroken_sprite: Sprite2D = $UnbrokenSprite
+@onready var broken_sprite: Sprite2D = $BrokenSprite
+@onready var health_bar: ProgressBar = $HealthBar
+@onready var break_particles: GPUParticles2D = $BreakParticles
+
+var health:int
+
+func _ready() -> void:
+	health = max_health
+	
+	#Set up health bar
+	initialize_health_bar()
+
+func initialize_health_bar():
+	health_bar.max_value=max_health
+	health_bar.value=health
+	health_bar.hide()
+
+func break_object():
+	unbroken_sprite.hide()
+	broken_sprite.show()
+	break_particles.emitting = true
+
+func take_damage(damage_taken:int):
+	#Set new health
+	health -= damage_taken
+	
+	#Change Fill Bar
+	health_bar.value=health
+	health_bar.show()
+	
+	#Break if lower than 0
+	if (health<=0):
+		self.break_object()
+
+func regenerate_object():
+	health = max_health
+	unbroken_sprite.show()
+	broken_sprite.hide()
+	initialize_health_bar()
+
+func deal_50_damage_to_self_test():
+	take_damage(50)
