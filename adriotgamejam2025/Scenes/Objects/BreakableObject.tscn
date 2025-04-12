@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://jjhle048n1ei"]
+
+[ext_resource type="Script" uid="uid://bpw32hn6qd5dt" path="res://Scenes/Objects/breakable_object.gd" id="1_6bgdp"]
+[ext_resource type="Texture2D" uid="uid://bsk13gq6a6sob" path="res://Assets/Modern_Office_Revamped_v1.2/4_Modern_Office_singles/16x16/Modern_Office_Singles_321.png" id="2_u7637"]
+
+[node name="BreakableObject" type="Node2D"]
+script = ExtResource("1_6bgdp")
+
+[node name="UnbrokenSprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_u7637")
+
+[node name="BrokenSprite" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_u7637")

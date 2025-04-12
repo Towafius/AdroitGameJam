@@ -14,3 +14,7 @@ config/name="AdriotGameJam2025"
 run/main_scene="uid://d2a6gkcab6xxj"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://Art/icon.svg"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
