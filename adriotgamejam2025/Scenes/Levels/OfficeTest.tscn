@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cj6qe5g60014" path="res://Scenes/Objects/FinishedObjects/breakable_watercooler.tscn" id="2_hhbbg"]
 [ext_resource type="PackedScene" uid="uid://dfk12u31qcpss" path="res://Scenes/Objects/FinishedObjects/breakable_trashcan.tscn" id="4_ah32f"]
 [ext_resource type="PackedScene" uid="uid://beiqmv6x223mi" path="res://Scenes/Entities/Player/player.tscn" id="4_pgld7"]
-[ext_resource type="AudioStream" uid="uid://cnieknaimfody" path="res://Assets/393489__sirplus__denseintenseloop16.wav" id="5_ah32f"]
+[ext_resource type="AudioStream" uid="uid://cnieknaimfody" path="res://Assets/background music.wav" id="5_ah32f"]
 
 [node name="OfficeTest" type="Node2D"]
 y_sort_enabled = true
