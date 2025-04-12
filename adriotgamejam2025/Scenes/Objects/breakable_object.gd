@@ -36,10 +36,11 @@ func take_damage(damage_taken:int):
 		#Change Fill Bar
 		health_bar.value=health
 		health_bar.show()
-	
-	#Break if lower than 0
-	if (health<=0):
-		self.break_object()
+		
+		#Break if lower than 0
+		if (health<=0):
+			self.break_object()
+
 
 func regenerate_object():
 	health = max_health
