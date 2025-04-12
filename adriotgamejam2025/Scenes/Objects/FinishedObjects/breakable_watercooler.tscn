@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cj6qe5g60014"]
 
 [ext_resource type="PackedScene" uid="uid://jjhle048n1ei" path="res://Scenes/Objects/BreakableObject.tscn" id="1_flxl8"]
-[ext_resource type="Texture2D" uid="uid://deu5rykdbu5t0" path="res://Assets/Modern_Office_Revamped_v1.2/4_Modern_Office_singles/16x16/Modern_Office_Singles_173.png" id="2_jbdeo"]
+[ext_resource type="Texture2D" uid="uid://diudmuckqjqte" path="res://Art/brokenobjects/water cooler.png" id="2_jbdeo"]
 [ext_resource type="Texture2D" uid="uid://bkuh0487l1x35" path="res://Art/brokenobjects/broken water cooler.png" id="3_iafwo"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_flxl8"]

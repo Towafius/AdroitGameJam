@@ -11,7 +11,7 @@ enum Attacks{
 
 var last_attack:int=-1
 var can_attack:bool = true
-var is_attacking := false
+@export var is_attacking := false
 var attack_exceptions = []
 
 # Called when the node enters the scene tree for the first time.

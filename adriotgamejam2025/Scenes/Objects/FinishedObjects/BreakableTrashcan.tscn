@@ -10,9 +10,11 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gmxhk"]
 shader = ExtResource("2_gjq74")
-shader_parameter/clr = Color(0, 0, 0, 1)
+shader_parameter/clr1 = Color(1, 0, 0, 1)
+shader_parameter/clr2 = Color(0, 0, 1, 1)
 shader_parameter/type = 2
 shader_parameter/thickness = 1.0
+shader_parameter/speed = 1.0
 
 [sub_resource type="Curve" id="Curve_s3q3b"]
 _data = [Vector2(0, 0.820225), 0.0, 0.0, 0, 0, Vector2(0.419118, 0.674157), 0.0, 0.0, 0, 0, Vector2(0.772059, 0.0898877), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]

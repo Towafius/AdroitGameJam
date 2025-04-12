@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://jjhle048n1ei"]
 
 [ext_resource type="Script" uid="uid://bpw32hn6qd5dt" path="res://Scenes/Objects/breakable_object.gd" id="1_6bgdp"]
-[ext_resource type="Shader" path="res://Scenes/Objects/Outline.gdshader" id="2_obm2q"]
+[ext_resource type="Shader" uid="uid://bjq03t15y2r74" path="res://Scenes/Objects/Outline.gdshader" id="2_obm2q"]
 [ext_resource type="Texture2D" uid="uid://bsk13gq6a6sob" path="res://Assets/Modern_Office_Revamped_v1.2/4_Modern_Office_singles/16x16/Modern_Office_Singles_321.png" id="2_u7637"]
 [ext_resource type="Texture2D" uid="uid://b2favhtgqktkp" path="res://Assets/Modern_Office_Revamped_v1.2/4_Modern_Office_singles/16x16/Modern_Office_Singles_322.png" id="3_u7637"]
 [ext_resource type="Texture2D" uid="uid://dgulw6rixcahh" path="res://Art/dustparticle.png" id="4_b6ikd"]
@@ -10,9 +10,11 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_eomwh"]
 shader = ExtResource("2_obm2q")
-shader_parameter/clr = Color(1, 1, 0.470588, 1)
+shader_parameter/clr1 = Color(1, 0.25098, 0, 1)
+shader_parameter/clr2 = Color(0.596078, 1, 0.0196078, 1)
 shader_parameter/type = 2
 shader_parameter/thickness = 1.0
+shader_parameter/speed = 2.0
 
 [sub_resource type="Curve" id="Curve_s3q3b"]
 _data = [Vector2(0, 0.820225), 0.0, 0.0, 0, 0, Vector2(0.419118, 0.674157), 0.0, 0.0, 0, 0, Vector2(0.772059, 0.0898877), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -73,6 +75,7 @@ text = "Regen Object"
 
 [node name="HealthBar" type="TextureProgressBar" parent="."]
 modulate = Color(1, 1, 1, 0.784314)
+z_index = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
