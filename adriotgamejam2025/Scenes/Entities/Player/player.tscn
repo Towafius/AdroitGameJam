@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://co4mhxtf1ubni" path="res://Scenes/Entities/Player/player.gd" id="1_a3d8c"]
 [ext_resource type="Script" uid="uid://m2xddct1li7e" path="res://Scenes/Entities/Player/rage_meter.gd" id="2_htcer"]
-[ext_resource type="Texture2D" uid="uid://dci8y1wffvnt8" path="res://Art/Player.png" id="2_mtuoh"]
+[ext_resource type="Texture2D" uid="uid://bpvomlgf8da3s" path="res://Art/Player.png" id="2_mtuoh"]
 [ext_resource type="Script" uid="uid://dgbgdpglom8q6" path="res://Scenes/Entities/Player/weapon.gd" id="3_mtuoh"]
 [ext_resource type="Texture2D" uid="uid://ef7pe5x3xa0d" path="res://Art/RagebarOutline.png" id="4_75l7y"]
 [ext_resource type="Texture2D" uid="uid://383pqc2hpso0" path="res://Art/bat.png" id="4_htcer"]
@@ -286,7 +286,7 @@ offset_top = 7.0
 offset_right = 277.5
 offset_bottom = 34.0
 grow_horizontal = 2
-value = 100.0
+value = 50.0
 nine_patch_stretch = true
 stretch_margin_left = 9
 stretch_margin_top = 7
@@ -318,9 +318,9 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -45.5
+offset_left = -49.5
 offset_top = -11.5
-offset_right = -5.5
+offset_right = -9.5
 offset_bottom = 11.5
 grow_horizontal = 0
 grow_vertical = 2

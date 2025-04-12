@@ -6,7 +6,7 @@ class_name BreakableObject
 
 @onready var unbroken_sprite: Sprite2D = $UnbrokenSprite
 @onready var broken_sprite: Sprite2D = $BrokenSprite
-@onready var health_bar: ProgressBar = $HealthBar
+@onready var health_bar: TextureProgressBar = $HealthBar
 @onready var smoke_particles: GPUParticles2D = $SmokeParticles
 
 var health:int
