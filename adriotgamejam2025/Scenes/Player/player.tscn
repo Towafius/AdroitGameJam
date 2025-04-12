@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://beiqmv6x223mi"]
+[gd_scene load_steps=7 format=3 uid="uid://beiqmv6x223mi"]
 
 [ext_resource type="Script" uid="uid://co4mhxtf1ubni" path="res://Scenes/Player/player.gd" id="1_a3d8c"]
 [ext_resource type="Texture2D" uid="uid://bbyih405wv5gu" path="res://Assets/Modern_Office_Revamped_v1.2/4_Modern_Office_singles/16x16/Modern_Office_Singles_329.png" id="1_uvnfx"]
@@ -7,8 +7,12 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a3d8c"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mtuoh"]
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_a3d8c")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
 texture = ExtResource("1_uvnfx")
@@ -26,3 +30,8 @@ script = ExtResource("3_mtuoh")
 position = Vector2(20, 0)
 rotation = -1.5708
 texture = ExtResource("3_xpcdj")
+
+[node name="Area2D" type="Area2D" parent="WeaponPivot/Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WeaponPivot/Sprite2D/Area2D"]
+shape = SubResource("CapsuleShape2D_mtuoh")
