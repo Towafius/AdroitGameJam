@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="AdriotGameJam2025"
-run/main_scene="uid://cm2yr8yd50ytg"
+run/main_scene="uid://ctmqmw3ramqk6"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://Art/icon.svg"
 
