@@ -1,7 +1,7 @@
 [gd_scene load_steps=25 format=3 uid="uid://beiqmv6x223mi"]
 
 [ext_resource type="Script" uid="uid://co4mhxtf1ubni" path="res://Scenes/Player/player.gd" id="1_a3d8c"]
-[ext_resource type="Script" uid="uid://m2xddct1li7e" path="res://Scenes/Player/rage_meter.gd" id="2_htcer"]
+[ext_resource type="Script" path="res://Scenes/Player/rage_meter.gd" id="2_htcer"]
 [ext_resource type="Texture2D" uid="uid://dci8y1wffvnt8" path="res://Art/Boss.png" id="2_mtuoh"]
 [ext_resource type="Script" uid="uid://dgbgdpglom8q6" path="res://Scenes/Player/weapon.gd" id="3_mtuoh"]
 [ext_resource type="Texture2D" uid="uid://383pqc2hpso0" path="res://Art/bat.png" id="4_htcer"]
