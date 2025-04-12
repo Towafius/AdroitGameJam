@@ -1,7 +1,25 @@
-[gd_scene load_steps=3 format=3 uid="uid://jjhle048n1ei"]
+[gd_scene load_steps=8 format=3 uid="uid://jjhle048n1ei"]
 
 [ext_resource type="Script" uid="uid://bpw32hn6qd5dt" path="res://Scenes/Objects/breakable_object.gd" id="1_6bgdp"]
 [ext_resource type="Texture2D" uid="uid://bsk13gq6a6sob" path="res://Assets/Modern_Office_Revamped_v1.2/4_Modern_Office_singles/16x16/Modern_Office_Singles_321.png" id="2_u7637"]
+[ext_resource type="Texture2D" uid="uid://b2favhtgqktkp" path="res://Assets/Modern_Office_Revamped_v1.2/4_Modern_Office_singles/16x16/Modern_Office_Singles_322.png" id="3_u7637"]
+[ext_resource type="Texture2D" uid="uid://ivlvsk824fkg" path="res://Assets/Modern_Office_Revamped_v1.2/4_Modern_Office_singles/16x16/Modern_Office_Singles_324.png" id="4_b6ikd"]
+
+[sub_resource type="Curve" id="Curve_s3q3b"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.62, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_jg0c0"]
+curve = SubResource("Curve_s3q3b")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_obm2q"]
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+spread = 60.0
+initial_velocity_min = 50.0
+initial_velocity_max = 50.0
+gravity = Vector3(0, 98, 0)
+alpha_curve = SubResource("CurveTexture_jg0c0")
 
 [node name="BreakableObject" type="Node2D"]
 script = ExtResource("1_6bgdp")
@@ -11,4 +29,51 @@ texture = ExtResource("2_u7637")
 
 [node name="BrokenSprite" type="Sprite2D" parent="."]
 visible = false
-texture = ExtResource("2_u7637")
+texture = ExtResource("3_u7637")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -127.0
+offset_bottom = 66.0
+grow_horizontal = 0
+
+[node name="Damage" type="Button" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "Damage Object"
+
+[node name="Regen" type="Button" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "Regen Object"
+
+[node name="HealthBar" type="ProgressBar" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -13.0
+offset_top = 17.0
+offset_right = 14.0
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 2
+value = 100.0
+show_percentage = false
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3.985, 3.985)
+
+[node name="BreakParticles" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 4
+texture = ExtResource("4_b6ikd")
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_obm2q")
+
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Damage" to="." method="deal_50_damage_to_self_test"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/Regen" to="." method="regenerate_object"]
