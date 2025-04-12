@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://beiqmv6x223mi"]
+[gd_scene load_steps=20 format=3 uid="uid://beiqmv6x223mi"]
 
 [ext_resource type="Script" uid="uid://co4mhxtf1ubni" path="res://Scenes/Player/player.gd" id="1_a3d8c"]
 [ext_resource type="Texture2D" uid="uid://t0c8wxdohox4" path="res://Assets/moderninteriors-win/16x16/Premade_Character_14.png" id="2_mtuoh"]
@@ -181,10 +181,6 @@ _data = {
 radius = 3.0
 height = 8.0
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mtuoh"]
-radius = 2.0
-height = 16.0
-
 [sub_resource type="Animation" id="Animation_06tpx"]
 resource_name = "Swing"
 tracks/0/type = "value"
@@ -259,6 +255,11 @@ shape = SubResource("CapsuleShape2D_a3d8c")
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
 
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(0, -6)
+scale = Vector2(1, 1)
+target_position = Vector2(0, -15)
+
 [node name="WeaponPivot" type="Node2D" parent="."]
 y_sort_enabled = true
 position = Vector2(0, -6)
@@ -270,12 +271,8 @@ rotation = 1.5708
 texture = ExtResource("4_htcer")
 offset = Vector2(-0.209397, -8)
 
-[node name="Area2D" type="Area2D" parent="WeaponPivot/Sprite2D"]
-position = Vector2(-0.0944708, -6.9958)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WeaponPivot/Sprite2D/Area2D"]
-position = Vector2(-0.0944705, 0.00420475)
-shape = SubResource("CapsuleShape2D_mtuoh")
+[node name="Marker2D" type="Marker2D" parent="WeaponPivot/Sprite2D"]
+position = Vector2(-2.18557e-07, -20)
 
 [node name="WeaponAnimator" type="AnimationPlayer" parent="WeaponPivot"]
 libraries = {

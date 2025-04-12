@@ -2,6 +2,10 @@ extends Node2D
 
 @onready var weapon_animator: AnimationPlayer = $WeaponAnimator
 @onready var attack_timer: Timer = $Attack_Timer
+@onready var ray_cast_2d: RayCast2D = $"../RayCast2D"
+@onready var marker_2d: Marker2D = $Sprite2D/Marker2D
+
+
 
 enum Attacks{
 	swing,
@@ -18,6 +22,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	ray_cast_2d.target_position = marker_2d.global_position-self.global_position
+	print(self.global_position-marker_2d.global_position)
 	look_at(get_global_mouse_position())
 	
 	if Input.is_action_pressed("attack") && can_attack:
