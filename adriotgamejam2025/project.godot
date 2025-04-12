@@ -15,6 +15,11 @@ run/main_scene="uid://d2a6gkcab6xxj"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://Art/icon.svg"
 
+[display]
+
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
+
 [input]
 
 move_right={
@@ -50,6 +55,7 @@ attack={
 [layer_names]
 
 2d_physics/layer_1="Environment"
+2d_physics/layer_3="Breakables"
 
 [rendering]
 
