@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var grace_period_timer: Timer = $GracePeriodTimer
+@onready var press_e_animation: AnimatedSprite2D = $"Press E animation"
 
 const SPEED = 75
 
@@ -37,6 +38,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			caught_meter-=1
 			print(caught_meter)
 			if caught_meter <= 0:
+				press_e_animation.hide()
 				grace_period_timer.start()
 
 func _handle_animation(direction:Vector2):
@@ -70,10 +72,12 @@ func _handle_animation(direction:Vector2):
 
 func get_caught():
 	if(grace_period_active):
-		return
+		return false
+	press_e_animation.show()
 	grace_period_active = true
 	caught_meter = 5 + times_caught
 	times_caught+=1
+	return true
 
 
 func _on_grace_period_timer_timeout() -> void:

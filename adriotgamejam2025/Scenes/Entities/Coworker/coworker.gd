@@ -3,6 +3,7 @@ extends CharacterBody2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
 @onready var player: CharacterBody2D = get_tree().get_first_node_in_group("player")
+@onready var sprite: Sprite2D = $Sprite
 
 const SPEED = 40
 
@@ -26,12 +27,10 @@ func _physics_process(delta: float) -> void:
 	if state == states.FOLLOW:
 		if self.global_position.distance_to(player.global_position) < 40:
 			state = states.ATTACK
-			print("Changing to attack")
 	
 	elif state == states.ATTACK:
 		if self.global_position.distance_to(player.global_position) >= 40:
 			state = states.FOLLOW
-			print("Changing to follow")
 			
 	var next_position = nav_agent.get_next_path_position()
 	#var distance = global_position.distance_to(player.global_position)
@@ -54,7 +53,11 @@ func _physics_process(delta: float) -> void:
 	_handle_animation(direction)
 
 	if(self.global_position.distance_to(player.global_position) <= 10):
-		player.get_caught()
+		if player.get_caught():
+			state = states.RETREAT
+			var tween = get_tree().create_tween()
+			tween.tween_property(sprite, "modulate", Color(1,1,1,0), 3.0)
+			
 	
 	if(direction):
 		last_direction = direction

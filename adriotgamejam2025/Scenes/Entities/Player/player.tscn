@@ -1,18 +1,19 @@
-[gd_scene load_steps=28 format=3 uid="uid://beiqmv6x223mi"]
+[gd_scene load_steps=32 format=3 uid="uid://beiqmv6x223mi"]
 
 [ext_resource type="Script" uid="uid://co4mhxtf1ubni" path="res://Scenes/Entities/Player/player.gd" id="1_a3d8c"]
 [ext_resource type="Script" uid="uid://m2xddct1li7e" path="res://Scenes/Entities/Player/rage_meter.gd" id="2_htcer"]
 [ext_resource type="Texture2D" uid="uid://bpvomlgf8da3s" path="res://Art/Player.png" id="2_mtuoh"]
+[ext_resource type="Texture2D" uid="uid://dqqdur6g26424" path="res://Art/baseball bat.png" id="3_i4twt"]
 [ext_resource type="Script" uid="uid://dgbgdpglom8q6" path="res://Scenes/Entities/Player/weapon.gd" id="3_mtuoh"]
 [ext_resource type="Texture2D" uid="uid://ef7pe5x3xa0d" path="res://Art/UI/RagebarOutline.png" id="4_75l7y"]
-[ext_resource type="Texture2D" uid="uid://383pqc2hpso0" path="res://Art/bat.png" id="4_htcer"]
 [ext_resource type="Texture2D" uid="uid://cswh3ln6miwqe" path="res://Art/UI/RagebarFill.png" id="5_5o8lj"]
 [ext_resource type="Theme" uid="uid://ngnx3f64w8bv" path="res://Art/Base_theme.tres" id="7_5o8lj"]
 [ext_resource type="Texture2D" uid="uid://c7kmtgdm340oh" path="res://Art/UI/BrownPanel.png" id="8_i4twt"]
+[ext_resource type="Texture2D" uid="uid://ddddusb5qipdr" path="res://Art/press E sprite.png" id="10_q8fdp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mtuoh"]
 radius = 3.0
-height = 24.0
+height = 32.0
 
 [sub_resource type="Animation" id="Animation_7g0yx"]
 length = 0.001
@@ -26,7 +27,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [1.5708]
+"values": [3.14159]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -53,7 +54,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1, 1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [0.698132, 2.44346, 1.5708]
+"values": [2.26893, 4.01426, 3.14159]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -70,6 +71,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_dey5f"]
 resource_name = "Swing_2"
+step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -77,10 +79,10 @@ tracks/0/path = NodePath("Sprite2D:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(-0.0333333, 0.1, 1),
+"times": PackedFloat32Array(0, 0.1, 1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [2.44346, 0.523599, 1.5708]
+"values": [4.01426, 2.0944, 3.14159]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -316,6 +318,28 @@ _data = {
 radius = 6.0
 height = 12.0
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_0yfgq"]
+atlas = ExtResource("10_q8fdp")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0fwr3"]
+atlas = ExtResource("10_q8fdp")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pc8mt"]
+animations = [{
+"frames": [{
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_0yfgq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0fwr3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 y_sort_enabled = true
 collision_layer = 2
@@ -327,17 +351,17 @@ position = Vector2(0, -8)
 script = ExtResource("3_mtuoh")
 
 [node name="Sprite2D" type="Sprite2D" parent="WeaponPivot"]
-position = Vector2(6, 0.209396)
-rotation = 1.5708
-texture = ExtResource("4_htcer")
-offset = Vector2(-0.209397, -8)
+rotation = 3.14159
+texture = ExtResource("3_i4twt")
+offset = Vector2(-18.435, 0)
 
 [node name="AttackArea" type="Area2D" parent="WeaponPivot/Sprite2D"]
 collision_layer = 4
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WeaponPivot/Sprite2D/AttackArea"]
-position = Vector2(0, -5)
+position = Vector2(-19, 1.51e-06)
+rotation = 1.5708
 shape = SubResource("CapsuleShape2D_mtuoh")
 
 [node name="WeaponAnimator" type="AnimationPlayer" parent="WeaponPivot"]
@@ -349,6 +373,7 @@ libraries = {
 wait_time = 0.6
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="Rage" type="Control" parent="CanvasLayer"]
 layout_mode = 3
@@ -488,6 +513,14 @@ zoom = Vector2(3, 3)
 [node name="GracePeriodTimer" type="Timer" parent="."]
 wait_time = 3.0
 one_shot = true
+
+[node name="Press E animation" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(0, -40)
+scale = Vector2(0.40625, 0.40625)
+sprite_frames = SubResource("SpriteFrames_pc8mt")
+autoplay = "default"
+frame_progress = 0.361977
 
 [connection signal="timeout" from="WeaponPivot/Attack_Timer" to="WeaponPivot" method="_on_attack_timer_timeout"]
 [connection signal="timeout" from="GracePeriodTimer" to="." method="_on_grace_period_timer_timeout"]
