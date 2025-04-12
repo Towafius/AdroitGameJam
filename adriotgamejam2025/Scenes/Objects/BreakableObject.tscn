@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://jjhle048n1ei"]
 
 [ext_resource type="Script" uid="uid://bpw32hn6qd5dt" path="res://Scenes/Objects/breakable_object.gd" id="1_6bgdp"]
-[ext_resource type="Shader" uid="uid://bjq03t15y2r74" path="res://Scenes/Objects/Outline.gdshader" id="2_obm2q"]
+[ext_resource type="Shader" path="res://Scenes/Objects/Outline.gdshader" id="2_obm2q"]
 [ext_resource type="Texture2D" uid="uid://bsk13gq6a6sob" path="res://Assets/Modern_Office_Revamped_v1.2/4_Modern_Office_singles/16x16/Modern_Office_Singles_321.png" id="2_u7637"]
 [ext_resource type="Texture2D" uid="uid://b2favhtgqktkp" path="res://Assets/Modern_Office_Revamped_v1.2/4_Modern_Office_singles/16x16/Modern_Office_Singles_322.png" id="3_u7637"]
 [ext_resource type="Texture2D" uid="uid://dgulw6rixcahh" path="res://Art/dustparticle.png" id="4_b6ikd"]
