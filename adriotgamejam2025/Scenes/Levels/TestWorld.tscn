@@ -36,6 +36,7 @@ tile_map_data = PackedByteArray("AAAHAAUAAQABAAgAAAAHAAYAAQABAAkAAAABAAAAAQAGAAw
 tile_set = ExtResource("2_sr1yi")
 
 [node name="BreakableObject" parent="." instance=ExtResource("3_w6hgi")]
+y_sort_enabled = false
 position = Vector2(59, 61)
 
 [node name="BreakableObject2" parent="." instance=ExtResource("4_nw68e")]
