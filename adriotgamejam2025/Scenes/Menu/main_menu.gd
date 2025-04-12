@@ -4,6 +4,7 @@ extends CanvasLayer
 
 func _ready() -> void:
 	show()
+	animation_player.play("idle")
 
 func _on_play_button_pressed() -> void:
 	hide()
