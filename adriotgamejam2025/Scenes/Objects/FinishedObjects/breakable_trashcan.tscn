@@ -1,14 +1,22 @@
-[gd_scene load_steps=5 format=3 uid="uid://dfk12u31qcpss"]
+[gd_scene load_steps=7 format=3 uid="uid://dfk12u31qcpss"]
 
 [ext_resource type="PackedScene" uid="uid://jjhle048n1ei" path="res://Scenes/Objects/BreakableObject.tscn" id="1_xvtv4"]
+[ext_resource type="Shader" uid="uid://bjq03t15y2r74" path="res://Scenes/Objects/Outline.gdshader" id="2_2qiax"]
 [ext_resource type="Texture2D" uid="uid://cmmberij6whlm" path="res://Art/brokenobjects/broken trash can.png" id="2_sw00q"]
 [ext_resource type="Texture2D" uid="uid://b2201rvjs35x" path="res://Assets/Modern_Office_Revamped_v1.2/4_Modern_Office_singles/16x16/Modern_Office_Singles_167.png" id="3_grlcj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uom1i"]
+shader = ExtResource("2_2qiax")
+shader_parameter/clr = Color(0, 0, 0, 1)
+shader_parameter/type = 2
+shader_parameter/thickness = 1.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_grlcj"]
 radius = 3.99994
 height = 13.0001
 
 [node name="BreakableObject" instance=ExtResource("1_xvtv4")]
+material = SubResource("ShaderMaterial_uom1i")
 
 [node name="UnbrokenSprite" parent="." index="0"]
 texture = ExtResource("3_grlcj")

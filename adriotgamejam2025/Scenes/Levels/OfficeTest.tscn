@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=4 uid="uid://bnyjcax8hglt2"]
+[gd_scene load_steps=5 format=4 uid="uid://bnyjcax8hglt2"]
 
 [ext_resource type="TileSet" uid="uid://cqgnw2rd2kdmo" path="res://Art/TileSets/OfficeTileMap.tres" id="1_kv8hx"]
 [ext_resource type="PackedScene" uid="uid://cj6qe5g60014" path="res://Scenes/Objects/FinishedObjects/breakable_watercooler.tscn" id="2_hhbbg"]
+[ext_resource type="PackedScene" uid="uid://dfk12u31qcpss" path="res://Scenes/Objects/FinishedObjects/breakable_trashcan.tscn" id="4_ah32f"]
+[ext_resource type="PackedScene" uid="uid://beiqmv6x223mi" path="res://Scenes/Entities/Player/player.tscn" id="4_pgld7"]
 
 [node name="OfficeTest" type="Node2D"]
 y_sort_enabled = true
@@ -65,3 +67,33 @@ offset_top = 326.0
 offset_right = 511.0
 offset_bottom = 366.0
 color = Color(0, 0, 0, 1)
+
+[node name="BreakableObject3" parent="." instance=ExtResource("2_hhbbg")]
+position = Vector2(208, 24)
+
+[node name="Player" parent="." instance=ExtResource("4_pgld7")]
+position = Vector2(204, 99)
+
+[node name="BreakableObject2" parent="." instance=ExtResource("4_ah32f")]
+position = Vector2(480, 152)
+
+[node name="BreakableObject4" parent="." instance=ExtResource("4_ah32f")]
+position = Vector2(-288, 136)
+
+[node name="BreakableObject5" parent="." instance=ExtResource("4_ah32f")]
+position = Vector2(-176, 136)
+
+[node name="BreakableObject6" parent="." instance=ExtResource("4_ah32f")]
+position = Vector2(-288, 280)
+
+[node name="BreakableObject7" parent="." instance=ExtResource("4_ah32f")]
+position = Vector2(-176, 280)
+
+[node name="BreakableObject8" parent="." instance=ExtResource("2_hhbbg")]
+position = Vector2(-320, 57)
+
+[node name="BreakableObject9" parent="." instance=ExtResource("4_ah32f")]
+position = Vector2(-304, 56)
+
+[node name="BreakableObject10" parent="." instance=ExtResource("2_hhbbg")]
+position = Vector2(-32, 56)
