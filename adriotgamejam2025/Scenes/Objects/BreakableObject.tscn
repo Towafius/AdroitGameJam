@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://jjhle048n1ei"]
+[gd_scene load_steps=11 format=3 uid="uid://jjhle048n1ei"]
 
 [ext_resource type="Script" uid="uid://bpw32hn6qd5dt" path="res://Scenes/Objects/breakable_object.gd" id="1_6bgdp"]
 [ext_resource type="Texture2D" uid="uid://bsk13gq6a6sob" path="res://Assets/Modern_Office_Revamped_v1.2/4_Modern_Office_singles/16x16/Modern_Office_Singles_321.png" id="2_u7637"]
 [ext_resource type="Texture2D" uid="uid://b2favhtgqktkp" path="res://Assets/Modern_Office_Revamped_v1.2/4_Modern_Office_singles/16x16/Modern_Office_Singles_322.png" id="3_u7637"]
 [ext_resource type="Texture2D" uid="uid://dgulw6rixcahh" path="res://Art/dustparticle.png" id="4_b6ikd"]
+[ext_resource type="Texture2D" uid="uid://lyclhvbbmlnn" path="res://Art/ObjectHealthBar.png" id="4_jg0c0"]
+[ext_resource type="Texture2D" uid="uid://bv537hm1166xv" path="res://Art/ObjectHealthBarFill.png" id="5_obm2q"]
 
 [sub_resource type="Curve" id="Curve_s3q3b"]
 _data = [Vector2(0, 0.820225), 0.0, 0.0, 0, 0, Vector2(0.419118, 0.674157), 0.0, 0.0, 0, 0, Vector2(0.772059, 0.0898877), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -59,20 +61,23 @@ text = "Damage Object"
 layout_mode = 2
 text = "Regen Object"
 
-[node name="HealthBar" type="ProgressBar" parent="."]
+[node name="HealthBar" type="TextureProgressBar" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -13.0
-offset_top = 17.0
-offset_right = 14.0
-offset_bottom = 22.0
+offset_left = -24.0
+offset_top = -29.0
+offset_right = 24.0
+offset_bottom = -13.0
 grow_horizontal = 2
 grow_vertical = 2
-value = 100.0
-show_percentage = false
+size_flags_horizontal = 4
+size_flags_vertical = 4
+value = 50.0
+texture_under = ExtResource("4_jg0c0")
+texture_progress = ExtResource("5_obm2q")
 
 [node name="SmokeParticles" type="GPUParticles2D" parent="."]
 emitting = false
