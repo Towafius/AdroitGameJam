@@ -18,7 +18,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.y = move_toward(velocity.y, 0, SPEED)
 
-	handle_animation(direction)
+	_handle_animation(direction)
 
 	if(direction):
 		last_direction = direction
@@ -26,7 +26,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 
-func handle_animation(direction:Vector2):
+func _handle_animation(direction:Vector2):
 	if(direction.is_equal_approx(Vector2.ZERO)):
 		if last_direction.x:
 			if last_direction.x > 0:

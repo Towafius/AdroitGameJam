@@ -177,9 +177,10 @@ _data = {
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4873w"]
 radius = 2.0
-height = 6.0
+height = 4.0
 
 [node name="Coworker" type="CharacterBody2D"]
+y_sort_enabled = true
 script = ExtResource("1_4873w")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
@@ -200,4 +201,11 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_4873w")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
-simplify_path = true
+target_desired_distance = 20.0
+debug_enabled = true
+
+[node name="nav_refresh" type="Timer" parent="."]
+autostart = true
+
+[connection signal="target_reached" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_target_reached"]
+[connection signal="timeout" from="nav_refresh" to="." method="_on_nav_refresh_timeout"]

@@ -1,25 +1,88 @@
 extends CharacterBody2D
 
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
+@onready var player: CharacterBody2D = get_tree().get_first_node_in_group("player")
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+const SPEED = 50
+const FOLLOWSPEED = SPEED
 
+var current_speed = SPEED
+var last_direction = Vector2(0,1)
+
+enum states{
+	FOLLOW,
+	RETREAT,
+	ATTACK,
+}
+
+var state := states.FOLLOW
+
+func _ready() -> void:
+	nav_agent.target_position = player.global_position
+	state = states.FOLLOW
 
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * delta
-
-	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis("ui_left", "ui_right")
-	if direction:
-		velocity.x = direction * SPEED
+	var next_position = nav_agent.get_next_path_position()
+	#var distance = global_position.distance_to(player.global_position)
+	var direction = global_position.direction_to(next_position)
+	if state == states.ATTACK:
+		current_speed = FOLLOWSPEED
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		current_speed = SPEED
+
+	if direction:
+		velocity.x = direction.x * current_speed
+		velocity.y = direction.y * current_speed
+	else:
+		velocity.x = move_toward(velocity.x, 0, current_speed)
+		velocity.y = move_toward(velocity.y, 0, current_speed)
+
+	_handle_animation(direction)
+
+	if(direction):
+		last_direction = direction
 
 	move_and_slide()
+
+
+func _on_nav_refresh_timeout() -> void:
+	if state == states.FOLLOW:
+		if self.global_position.distance_to(player.global_position) < 500:
+			state = states.ATTACK
+	
+	elif state == states.ATTACK:
+		if self.global_position.distance_to(player.global_position) >= 500:
+			state = states.FOLLOW
+	nav_agent.target_position = player.global_position
+	print(nav_agent.target_position)
+
+
+func _on_navigation_agent_2d_target_reached() -> void:
+	_on_nav_refresh_timeout()
+
+func _handle_animation(direction:Vector2):
+	if(direction.is_equal_approx(Vector2.ZERO)):
+		if last_direction.x:
+			if last_direction.x > 0:
+				animation_player.play("idle_right")
+			else:
+				animation_player.play("idle_left")
+		elif last_direction.y:
+			if last_direction.y > 0:
+				animation_player.play("idle_down")
+			else:
+				animation_player.play("idle_up")
+		else:
+			animation_player.play("idle_down")
+	else:
+		if direction.x:
+			if direction.x > 0:
+				animation_player.play("walk_right")
+			else:
+				animation_player.play("walk_left")
+		else:
+			if direction.y > 0:
+				animation_player.play("walk_down")
+			else:
+				animation_player.play("walk_up")
