@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://cj6qe5g60014"]
+
+[ext_resource type="PackedScene" uid="uid://jjhle048n1ei" path="res://Scenes/Objects/BreakableObject.tscn" id="1_flxl8"]
+[ext_resource type="Texture2D" uid="uid://deu5rykdbu5t0" path="res://Assets/Modern_Office_Revamped_v1.2/4_Modern_Office_singles/16x16/Modern_Office_Singles_173.png" id="2_jbdeo"]
+[ext_resource type="Texture2D" uid="uid://bkuh0487l1x35" path="res://Art/brokenobjects/broken water cooler.png" id="3_iafwo"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_flxl8"]
+radius = 4.99994
+height = 14.0
+
+[node name="BreakableObject" instance=ExtResource("1_flxl8")]
+
+[node name="UnbrokenSprite" parent="." index="0"]
+texture = ExtResource("2_jbdeo")
+
+[node name="BrokenSprite" parent="." index="1"]
+texture = ExtResource("3_iafwo")
+
+[node name="HealthBar" parent="." index="3"]
+offset_left = -32.0
+offset_top = -28.0
+offset_right = 16.0
+offset_bottom = -12.0
+
+[node name="CollisionShape2D" parent="." index="5"]
+position = Vector2(-8, 10)
+shape = SubResource("CapsuleShape2D_flxl8")

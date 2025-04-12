@@ -26,6 +26,7 @@ func break_object():
 	unbroken_sprite.hide()
 	broken_sprite.show()
 	smoke_particles.emitting = true
+	health_bar.hide()
 
 func take_damage(damage_taken:int):
 	#Set new health
@@ -44,6 +45,7 @@ func regenerate_object():
 	unbroken_sprite.show()
 	broken_sprite.hide()
 	initialize_health_bar()
+	health_bar.show()
 
 func deal_50_damage_to_self_test():
 	take_damage(50)

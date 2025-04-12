@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=4 uid="uid://bk18rhb6tyoa7"]
+[gd_scene load_steps=5 format=4 uid="uid://bk18rhb6tyoa7"]
 
 [ext_resource type="PackedScene" uid="uid://beiqmv6x223mi" path="res://Scenes/Entities/Player/player.tscn" id="1_nw68e"]
 [ext_resource type="TileSet" uid="uid://cqgnw2rd2kdmo" path="res://Art/TileSets/OfficeTileMap.tres" id="2_sr1yi"]
 [ext_resource type="PackedScene" uid="uid://jjhle048n1ei" path="res://Scenes/Objects/BreakableObject.tscn" id="3_w6hgi"]
+[ext_resource type="PackedScene" uid="uid://8bh1f5rkmj5y" path="res://Scenes/Objects/FinishedObjects/BreakableTrashcan.tscn" id="4_nw68e"]
 
 [node name="TestWorld" type="Node2D"]
 y_sort_enabled = true
@@ -36,3 +37,6 @@ tile_set = ExtResource("2_sr1yi")
 
 [node name="BreakableObject" parent="." instance=ExtResource("3_w6hgi")]
 position = Vector2(59, 61)
+
+[node name="BreakableObject2" parent="." instance=ExtResource("4_nw68e")]
+position = Vector2(180, 119)
