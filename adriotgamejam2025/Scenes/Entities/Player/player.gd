@@ -1,16 +1,22 @@
 extends CharacterBody2D
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var grace_period_timer: Timer = $GracePeriodTimer
 
-const SPEED = 100
+const SPEED = 75
 
 var last_direction = Vector2(0,1)
+var caught_meter = 0 
+var times_caught = 0
+var grace_period_active := false
 
 func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Vector2(Input.get_axis("move_left", "move_right"), Input.get_axis("move_up", "move_down")).normalized()
-	
+	var direction := Vector2.ZERO
+	if (caught_meter <= 0):
+		direction = Vector2(Input.get_axis("move_left", "move_right"), Input.get_axis("move_up", "move_down")).normalized()
+
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.y = direction.y * SPEED
@@ -25,29 +31,50 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action("escape"):
+		if caught_meter >0:
+			caught_meter-=1
+			print(caught_meter)
+			if caught_meter <= 0:
+				grace_period_timer.start()
 
 func _handle_animation(direction:Vector2):
-	if(direction.is_equal_approx(Vector2.ZERO)):
-		if last_direction.x:
-			if last_direction.x > 0:
-				animation_player.play("idle_right")
+	if(caught_meter <= 0):
+		if(direction.is_equal_approx(Vector2.ZERO)):
+			if last_direction.x:
+				if last_direction.x > 0:
+					animation_player.play("idle_right")
+				else:
+					animation_player.play("idle_left")
+			elif last_direction.y:
+				if last_direction.y > 0:
+					animation_player.play("idle_down")
+				else:
+					animation_player.play("idle_up")
 			else:
-				animation_player.play("idle_left")
-		elif last_direction.y:
-			if last_direction.y > 0:
 				animation_player.play("idle_down")
-			else:
-				animation_player.play("idle_up")
 		else:
-			animation_player.play("idle_down")
+			if direction.x:
+				if direction.x > 0:
+					animation_player.play("walk_right")
+				else:
+					animation_player.play("walk_left")
+			else:
+				if direction.y > 0:
+					animation_player.play("walk_down")
+				else:
+					animation_player.play("walk_up")
 	else:
-		if direction.x:
-			if direction.x > 0:
-				animation_player.play("walk_right")
-			else:
-				animation_player.play("walk_left")
-		else:
-			if direction.y > 0:
-				animation_player.play("walk_down")
-			else:
-				animation_player.play("walk_up")
+		animation_player.play("caught_left")
+
+func get_caught():
+	if(grace_period_active):
+		return
+	grace_period_active = true
+	caught_meter = 5 + times_caught
+	times_caught+=1
+
+
+func _on_grace_period_timer_timeout() -> void:
+	grace_period_active = false

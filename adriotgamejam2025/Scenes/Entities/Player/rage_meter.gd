@@ -1,7 +1,7 @@
 extends TextureProgressBar
 
 @onready var decay_rate_label: Label = $DecayRate
-@onready var player_sprite: Sprite2D = $"../../PlayerSprite"
+@onready var player_sprite: Sprite2D = $"../../../PlayerSprite"
 
 @export var decay_rate :float = 3
 
