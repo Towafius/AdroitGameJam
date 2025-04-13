@@ -249,6 +249,7 @@ position = Vector2(472, 157)
 stream = ExtResource("5_ah32f")
 volume_db = -10.0
 autoplay = true
+bus = &"Music"
 
 [node name="BreakableObject" parent="." instance=ExtResource("13_a1yct")]
 z_index = 1
