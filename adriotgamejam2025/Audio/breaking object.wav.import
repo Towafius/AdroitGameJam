@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://wqdxtvi3e7b8"
+path="res://.godot/imported/breaking object.wav-511cde05bf54f1904d2eb96388cec885.sample"
+
+[deps]
+
+source_file="res://Audio/breaking object.wav"
+dest_files=["res://.godot/imported/breaking object.wav-511cde05bf54f1904d2eb96388cec885.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
