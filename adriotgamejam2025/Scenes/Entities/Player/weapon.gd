@@ -45,10 +45,10 @@ func _handle_attack_frame():
 	for body in attack_area.get_overlapping_bodies():
 		if body is BreakableObject:
 			if !(body in attack_exceptions):
-				body.take_damage(50)
-				attack_exceptions.append(body)
-				if body.health <=0:
+				if body.take_damage(50):
 					rage_meter.add_rage(body.get_rage_amount())
+				attack_exceptions.append(body)
+					
 	
 	
 

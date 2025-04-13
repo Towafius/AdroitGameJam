@@ -4,11 +4,14 @@ class_name BreakableObject
 
 @export var max_health:int = 50
 @export var rage_value:float = max_health/5
+@export var score_value:float = max_health
 
 @onready var unbroken_sprite: Sprite2D = $UnbrokenSprite
 @onready var broken_sprite: Sprite2D = $BrokenSprite
 @onready var health_bar: TextureProgressBar = $HealthBar
 @onready var smoke_particles: GPUParticles2D = $SmokeParticles
+
+const TEMP_TEXT_LABEL = preload("res://Scenes/Objects/temp_text_label.tscn")
 
 var health:int
 
@@ -28,8 +31,20 @@ func break_object():
 	broken_sprite.show()
 	smoke_particles.emitting = true
 	health_bar.hide()
+	GameManager.add_score(score_value)
+	var rage_text = TEMP_TEXT_LABEL.instantiate()
+	var score_text = TEMP_TEXT_LABEL.instantiate()
+	self.add_child(rage_text)
+	self.add_child(score_text)
+	rage_text.set_color(Color.DARK_RED)
+	score_text.set_color(Color.YELLOW)
+	rage_text.set_text("+" + str(rage_value))
+	score_text.set_text("+" + str(score_value))
+	rage_text.global_position = health_bar.global_position + Vector2(10,0)
+	score_text.global_position = health_bar.global_position + Vector2(-10,0)
 
-func take_damage(damage_taken:int):
+
+func take_damage(damage_taken:int) -> bool:
 	if(health>0):
 		#Set new health
 		health -= damage_taken
@@ -41,6 +56,9 @@ func take_damage(damage_taken:int):
 		#Break if lower than 0
 		if (health<=0):
 			self.break_object()
+			return true
+			
+	return false
 
 func get_rage_amount():
 	return rage_value
