@@ -14,11 +14,9 @@ func _ready() -> void:
 	
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("open_options"):
-		toggle_menu()
+		self.visible = !self.visible
 		
 
-func toggle_menu():
-	self.visible = !self.visible
 
 func _on_music_value_changed(value: float) -> void:
 	GameManager.set_bus_volume("Music", value)

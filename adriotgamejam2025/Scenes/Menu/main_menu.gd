@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 @onready var animation_player: AnimationPlayer = $"../AnimationPlayer"
+@onready var settings_menu: Control = $"Settings Menu"
 
 func _ready() -> void:
 	show()
@@ -11,7 +12,7 @@ func _on_play_button_pressed() -> void:
 	animation_player.play("Intro")
 
 func _on_settings_button_pressed() -> void:
-	pass # Replace with function body.
+	settings_menu.toggle_menu()
 
 
 func _on_quit_button_pressed() -> void:
