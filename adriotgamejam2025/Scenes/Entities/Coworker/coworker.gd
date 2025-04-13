@@ -5,9 +5,8 @@ extends CharacterBody2D
 @onready var player: CharacterBody2D = get_tree().get_first_node_in_group("player")
 @onready var sprite: Sprite2D = $Sprite
 
-const coworker_sprites = [preload("res://Art/Coworker.png"), preload("res://Art/coworker 2.png")]
+const coworker_sprites = [preload("res://Art/Coworkers/character helly.png"),preload("res://Art/Coworkers/character mark.png"),preload("res://Art/Coworkers/coworker 2.png"),preload("res://Art/Coworkers/Coworker.png")]
 const SPEED = 40
-
 
 var current_speed = SPEED
 var last_direction = Vector2(0,1)
@@ -21,6 +20,7 @@ enum states{
 var state := states.FOLLOW
 
 func _ready() -> void:
+	current_speed *= randf_range(.7, 1.2)
 	sprite.texture = coworker_sprites.pick_random()
 	nav_agent.target_position = player.global_position
 	state = states.FOLLOW

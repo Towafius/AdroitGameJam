@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cfjo8k6dwveat"
-path="res://.godot/imported/character helly.png-a270f8e40877b4ee1fba3baa8b502b23.ctex"
+path="res://.godot/imported/character helly.png-73390bce00e9ac118170d362b86c760f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/character helly.png"
-dest_files=["res://.godot/imported/character helly.png-a270f8e40877b4ee1fba3baa8b502b23.ctex"]
+source_file="res://Art/Coworkers/character helly.png"
+dest_files=["res://.godot/imported/character helly.png-73390bce00e9ac118170d362b86c760f.ctex"]
 
 [params]
 

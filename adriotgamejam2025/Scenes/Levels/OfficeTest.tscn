@@ -28,7 +28,7 @@ baking_rect_offset = Vector2(0, -0.015)
 y_sort_enabled = true
 
 [node name="Player" parent="." instance=ExtResource("4_pgld7")]
-position = Vector2(-192, 99)
+position = Vector2(438, 184)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 y_sort_enabled = true

@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=3 uid="uid://bsm8yjukd2qwo"]
 
-[ext_resource type="Texture2D" uid="uid://cmwail0hd7c58" path="res://Art/Coworker.png" id="1_6hupx"]
+[ext_resource type="Texture2D" uid="uid://cmwail0hd7c58" path="res://Art/Coworkers/Coworker.png" id="1_6hupx"]
 [ext_resource type="Script" uid="uid://d227ue4agpo3f" path="res://Scenes/Entities/Coworker/coworker.gd" id="1_4873w"]
 
 [sub_resource type="Animation" id="Animation_htcer"]

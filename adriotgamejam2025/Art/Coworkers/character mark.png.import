@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmwail0hd7c58"
-path="res://.godot/imported/Coworker.png-0719927234f87903917e58a9d0b35d81.ctex"
+uid="uid://ul6rk4dkvcyn"
+path="res://.godot/imported/character mark.png-7d190106f3b1e19acd55ee5419c2fafc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Coworker.png"
-dest_files=["res://.godot/imported/Coworker.png-0719927234f87903917e58a9d0b35d81.ctex"]
+source_file="res://Art/Coworkers/character mark.png"
+dest_files=["res://.godot/imported/character mark.png-7d190106f3b1e19acd55ee5419c2fafc.ctex"]
 
 [params]
 
