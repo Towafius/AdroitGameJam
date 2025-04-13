@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cy58lwiefmley"]
+[gd_scene load_steps=5 format=3 uid="uid://cy58lwiefmley"]
 
 [ext_resource type="PackedScene" uid="uid://jjhle048n1ei" path="res://Scenes/Objects/BreakableObject.tscn" id="1_6d1a5"]
 [ext_resource type="Texture2D" uid="uid://cot47nkncas8c" path="res://Art/brokenobjects/coffee pot.png" id="2_di1r3"]
 [ext_resource type="Texture2D" uid="uid://d1h75pl13qxc2" path="res://Art/brokenobjects/broken coffee pot.png" id="3_w1i06"]
+[ext_resource type="AudioStream" uid="uid://3dct52c43w1l" path="res://Audio/337838__newagesoup__med-metal-hit-02.wav" id="4_w1i06"]
 
 [node name="BreakableObject" instance=ExtResource("1_6d1a5")]
 
@@ -18,3 +19,7 @@ offset_right = 7.0
 
 [node name="CollisionShape2D" parent="." index="4"]
 position = Vector2(0, 6)
+
+[node name="AudioStreamPlayer2D" parent="." index="5"]
+stream = ExtResource("4_w1i06")
+pitch_scale = 1.54
