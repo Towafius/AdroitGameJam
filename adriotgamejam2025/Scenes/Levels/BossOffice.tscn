@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://cm2yr8yd50ytg"]
+[gd_scene load_steps=16 format=4 uid="uid://cm2yr8yd50ytg"]
 
 [ext_resource type="TileSet" uid="uid://cqgnw2rd2kdmo" path="res://Art/TileSets/OfficeTileMap.tres" id="1_hm1xh"]
 [ext_resource type="Texture2D" uid="uid://bpvomlgf8da3s" path="res://Art/Player.png" id="3_eh5fx"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dlwmpb6l4163u" path="res://Assets/moderninteriors-win/4_User_Interface_Elements/UI_16x16.png" id="4_o770h"]
 [ext_resource type="Theme" uid="uid://ngnx3f64w8bv" path="res://Art/UI/Base_theme.tres" id="6_w2vd1"]
 [ext_resource type="AudioStream" uid="uid://dae0m4161y68x" path="res://Audio/519072__evretro__8-bit-damage-impact-break-sounds.wav" id="7_lj7tw"]
+[ext_resource type="Texture2D" uid="uid://db7cti37x0s2" path="res://Art/fire emote.png" id="8_v3uda"]
 
 [sub_resource type="Animation" id="Animation_o770h"]
 resource_name = "Intro"
@@ -98,6 +99,18 @@ tracks/6/keys = {
 "update": 1,
 "values": [true, false]
 }
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("AnimatedSprite2D:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 3.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
 
 [sub_resource type="Animation" id="Animation_w2vd1"]
 length = 0.001
@@ -173,6 +186,18 @@ tracks/5/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AnimatedSprite2D:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_eh5fx"]
 resource_name = "idle"
@@ -210,6 +235,28 @@ _data = {
 &"RESET": SubResource("Animation_w2vd1"),
 &"idle": SubResource("Animation_eh5fx")
 }
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dv2th"]
+atlas = ExtResource("8_v3uda")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w3byx"]
+atlas = ExtResource("8_v3uda")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6xq10"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dv2th")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w3byx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="BossOffice" type="Node2D"]
 y_sort_enabled = true
@@ -322,6 +369,13 @@ text = "Quit"
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_lj7tw")
 bus = &"SFX"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(130, 46)
+sprite_frames = SubResource("SpriteFrames_6xq10")
+autoplay = "default"
+frame_progress = 0.78138
 
 [connection signal="pressed" from="MainMenu/Buttons/PlayButton" to="MainMenu" method="_on_play_button_pressed"]
 [connection signal="pressed" from="MainMenu/Buttons/SettingsButton" to="MainMenu" method="_on_settings_button_pressed"]
