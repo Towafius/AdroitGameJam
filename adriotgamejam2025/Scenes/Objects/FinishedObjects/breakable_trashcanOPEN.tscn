@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dojy6r47w54ye"]
+[gd_scene load_steps=4 format=3 uid="uid://cnn4af3jud27c"]
 
 [ext_resource type="PackedScene" uid="uid://jjhle048n1ei" path="res://Scenes/Objects/BreakableObject.tscn" id="1_8i2el"]
 [ext_resource type="Texture2D" uid="uid://crpt6733i8ned" path="res://Art/brokenobjects/trashcan OPEN.png" id="2_ie7cd"]
@@ -7,19 +7,20 @@
 [node name="BreakableObject" instance=ExtResource("1_8i2el")]
 
 [node name="UnbrokenSprite" parent="." index="0"]
+position = Vector2(8, -8)
 texture = ExtResource("2_ie7cd")
 
 [node name="BrokenSprite" parent="." index="1"]
+position = Vector2(8, -8)
 texture = ExtResource("3_ybosg")
 
 [node name="CanvasLayer" parent="." index="2"]
 visible = true
 
 [node name="HealthBar" parent="." index="3"]
-offset_left = -32.0
-offset_top = -20.0
-offset_right = 16.0
-offset_bottom = -4.0
+offset_top = -28.0
+offset_bottom = -12.0
 
 [node name="CollisionShape2D" parent="." index="5"]
-position = Vector2(-8, 10)
+position = Vector2(0, -5)
+rotation = 3.14159

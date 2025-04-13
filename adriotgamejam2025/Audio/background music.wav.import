@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cnieknaimfody"
-path="res://.godot/imported/background music.wav-7c5d957cac2c90d6077d7f680f51ea01.sample"
+path="res://.godot/imported/background music.wav-ce816eaa6e8c010bb8b2494204d7032e.sample"
 
 [deps]
 
-source_file="res://Assets/background music.wav"
-dest_files=["res://.godot/imported/background music.wav-7c5d957cac2c90d6077d7f680f51ea01.sample"]
+source_file="res://Audio/background music.wav"
+dest_files=["res://.godot/imported/background music.wav-ce816eaa6e8c010bb8b2494204d7032e.sample"]
 
 [params]
 

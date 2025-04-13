@@ -5,23 +5,24 @@
 [ext_resource type="Texture2D" uid="uid://bkuh0487l1x35" path="res://Art/brokenobjects/broken water cooler.png" id="3_iafwo"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_flxl8"]
-radius = 4.99994
-height = 14.0
+radius = 7.0
+height = 28.0
 
 [node name="BreakableObject" instance=ExtResource("1_flxl8")]
 
 [node name="UnbrokenSprite" parent="." index="0"]
+position = Vector2(8, -7)
 texture = ExtResource("2_jbdeo")
 
 [node name="BrokenSprite" parent="." index="1"]
+position = Vector2(9, -7)
 texture = ExtResource("3_iafwo")
 
 [node name="HealthBar" parent="." index="3"]
-offset_left = -32.0
-offset_top = -28.0
-offset_right = 16.0
-offset_bottom = -12.0
+offset_top = -35.0
+offset_bottom = -19.0
 
 [node name="CollisionShape2D" parent="." index="5"]
-position = Vector2(-8, 10)
+position = Vector2(-1, -6)
+rotation = 3.14159
 shape = SubResource("CapsuleShape2D_flxl8")

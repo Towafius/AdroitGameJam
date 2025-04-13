@@ -41,7 +41,7 @@ func _physics_process(delta: float) -> void:
 		states.RETREAT:
 			direction = -global_position.direction_to(next_position)
 		states.ATTACK:
-			direction = global_position.direction_to(player.global_position)
+			direction = global_position.direction_to(player.global_position).normalized()
 	
 	if direction:
 		velocity.x = direction.x * current_speed

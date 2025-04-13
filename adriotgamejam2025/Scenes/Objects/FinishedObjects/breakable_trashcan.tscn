@@ -14,25 +14,24 @@ shader_parameter/thickness = 1.0
 shader_parameter/speed = 1.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_grlcj"]
-radius = 3.99994
-height = 13.0001
+radius = 8.0
+height = 16.0
 
 [node name="BreakableObject" instance=ExtResource("1_xvtv4")]
 material = SubResource("ShaderMaterial_uom1i")
 
 [node name="UnbrokenSprite" parent="." index="0"]
+position = Vector2(8, -5)
 texture = ExtResource("3_2qiax")
 
 [node name="BrokenSprite" parent="." index="1"]
+position = Vector2(8, -5)
 texture = ExtResource("2_sw00q")
 
 [node name="HealthBar" parent="." index="3"]
-modulate = Color(1, 1, 1, 0.784314)
-offset_left = -31.0
-offset_top = -16.0
-offset_right = 17.0
-offset_bottom = 0.0
+offset_top = -18.0
+offset_bottom = -2.0
 
 [node name="CollisionShape2D" parent="." index="5"]
-position = Vector2(-8, 11)
+position = Vector2(0, 1)
 shape = SubResource("CapsuleShape2D_grlcj")

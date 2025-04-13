@@ -2,7 +2,7 @@ extends StaticBody2D
 
 class_name BreakableObject
 
-@export var max_health:int = 100
+@export var max_health:int = 50
 
 @onready var unbroken_sprite: Sprite2D = $UnbrokenSprite
 @onready var broken_sprite: Sprite2D = $BrokenSprite

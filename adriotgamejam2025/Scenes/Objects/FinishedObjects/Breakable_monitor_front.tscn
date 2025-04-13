@@ -1,22 +1,28 @@
-[gd_scene load_steps=4 format=3 uid="uid://be7dac2vnw7u3"]
+[gd_scene load_steps=5 format=3 uid="uid://upjmadd6ru0q"]
 
 [ext_resource type="PackedScene" uid="uid://jjhle048n1ei" path="res://Scenes/Objects/BreakableObject.tscn" id="1_1ihgr"]
 [ext_resource type="Texture2D" uid="uid://dupnxl447teau" path="res://Art/brokenobjects/white monitor front.png" id="2_easxf"]
 [ext_resource type="Texture2D" uid="uid://qplicd4bx2qv" path="res://Art/brokenobjects/broken white monitor front.png" id="3_sp556"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_easxf"]
+radius = 8.0
+height = 16.0
+
 [node name="BreakableObject" instance=ExtResource("1_1ihgr")]
+max_health = 200
 
 [node name="UnbrokenSprite" parent="." index="0"]
+position = Vector2(7, -16)
 texture = ExtResource("2_easxf")
 
 [node name="BrokenSprite" parent="." index="1"]
+position = Vector2(7, -17)
 texture = ExtResource("3_sp556")
 
 [node name="HealthBar" parent="." index="3"]
-offset_left = -32.0
-offset_top = -2.0
-offset_right = 16.0
-offset_bottom = 14.0
+offset_top = -20.0
+offset_bottom = -4.0
 
 [node name="CollisionShape2D" parent="." index="5"]
-position = Vector2(-8, 17)
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_easxf")
