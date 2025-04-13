@@ -28,6 +28,7 @@ func initialize_health_bar():
 	health_bar.hide()
 
 func break_object():
+	GameManager.add_repairable(self)
 	unbroken_sprite.hide()
 	broken_sprite.show()
 	smoke_particles.emitting = true
@@ -68,11 +69,11 @@ func get_rage_amount():
 	return rage_value
 
 func regenerate_object():
+	max_health += 50
 	health = max_health
 	unbroken_sprite.show()
 	broken_sprite.hide()
 	initialize_health_bar()
-	health_bar.show()
 
 func deal_50_damage_to_self_test():
 	take_damage(50)

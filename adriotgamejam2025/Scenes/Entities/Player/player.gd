@@ -13,6 +13,9 @@ var caught_meter = 0
 var times_caught = 0
 var grace_period_active := false
 
+func _ready() -> void:
+	GameManager.reset_repairables()
+
 func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.

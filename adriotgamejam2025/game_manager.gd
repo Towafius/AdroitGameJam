@@ -3,6 +3,7 @@ extends Node
 signal score_updated(new_score: float)
 
 var score: float = 0
+var repairables = []
 
 func add_score(amount: float) -> void:
 	score += amount
@@ -16,3 +17,14 @@ func set_bus_volume(bus_name: String, value: float) -> void:
 
 func get_bus_volume(bus_name: String) -> float:
 	return db_to_linear(AudioServer.get_bus_volume_db(AudioServer.get_bus_index(bus_name)))
+
+func pop_repairables():
+	var value = repairables
+	repairables = []
+	return value
+
+func add_repairable(body):
+	repairables.append(body)
+
+func reset_repairables():
+	repairables = []
