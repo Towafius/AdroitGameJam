@@ -1,5 +1,26 @@
-[gd_scene load_steps=2 format=3 uid="uid://cur54qbi578ck"]
+[gd_scene load_steps=5 format=3 uid="uid://cur54qbi578ck"]
 
 [ext_resource type="PackedScene" uid="uid://jjhle048n1ei" path="res://Scenes/Objects/BreakableObject.tscn" id="1_fbgg1"]
+[ext_resource type="Texture2D" uid="uid://dwabylw7uu3u2" path="res://Art/brokenobjects/mirror.png" id="2_0bv8j"]
+[ext_resource type="Texture2D" uid="uid://6yqi38jgsoth" path="res://Art/brokenobjects/broken mirror.png" id="3_bpids"]
+[ext_resource type="AudioStream" uid="uid://cplsky60awuv" path="res://Audio/260434__roganmcdougald__glass-break-medium-jar.wav" id="4_pb2ot"]
 
 [node name="BreakableObject" instance=ExtResource("1_fbgg1")]
+
+[node name="UnbrokenSprite" parent="." index="0"]
+texture = ExtResource("2_0bv8j")
+
+[node name="BrokenSprite" parent="." index="1"]
+texture = ExtResource("3_bpids")
+
+[node name="HealthBar" parent="." index="2"]
+offset_left = -9.0
+offset_top = -21.0
+offset_right = 7.0
+offset_bottom = -5.0
+
+[node name="CollisionShape2D" parent="." index="4"]
+position = Vector2(0, 2)
+
+[node name="AudioStreamPlayer2D" parent="." index="5"]
+stream = ExtResource("4_pb2ot")

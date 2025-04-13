@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dfk12u31qcpss"]
+[gd_scene load_steps=8 format=3 uid="uid://dfk12u31qcpss"]
 
 [ext_resource type="PackedScene" uid="uid://jjhle048n1ei" path="res://Scenes/Objects/BreakableObject.tscn" id="1_xvtv4"]
 [ext_resource type="Shader" uid="uid://bjq03t15y2r74" path="res://Scenes/Objects/Outline.gdshader" id="2_2qiax"]
 [ext_resource type="Texture2D" uid="uid://cmmberij6whlm" path="res://Art/brokenobjects/broken trash can.png" id="2_sw00q"]
 [ext_resource type="Texture2D" uid="uid://da7xtt13tpln4" path="res://Art/brokenobjects/trashcan CLOSED.png" id="3_2qiax"]
+[ext_resource type="AudioStream" uid="uid://3dct52c43w1l" path="res://Audio/337838__newagesoup__med-metal-hit-02.wav" id="5_uom1i"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_uom1i"]
 shader = ExtResource("2_2qiax")
@@ -14,8 +15,8 @@ shader_parameter/thickness = 1.0
 shader_parameter/speed = 1.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_grlcj"]
-radius = 8.0
-height = 16.0
+radius = 7.0
+height = 14.0
 
 [node name="BreakableObject" instance=ExtResource("1_xvtv4")]
 material = SubResource("ShaderMaterial_uom1i")
@@ -37,3 +38,7 @@ offset_bottom = -2.0
 [node name="CollisionShape2D" parent="." index="4"]
 position = Vector2(0, 1)
 shape = SubResource("CapsuleShape2D_grlcj")
+
+[node name="AudioStreamPlayer2D" parent="." index="5"]
+stream = ExtResource("5_uom1i")
+volume_db = -33.131

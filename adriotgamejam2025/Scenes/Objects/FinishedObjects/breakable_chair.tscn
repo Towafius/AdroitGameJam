@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://c3ain2ljddlor"]
+[gd_scene load_steps=6 format=3 uid="uid://c0f6lrwrafonc"]
 
 [ext_resource type="PackedScene" uid="uid://jjhle048n1ei" path="res://Scenes/Objects/BreakableObject.tscn" id="1_tpnoc"]
 [ext_resource type="Texture2D" uid="uid://dg0s7glhgvw5u" path="res://Art/brokenobjects/chair.png" id="2_p57bb"]
 [ext_resource type="Texture2D" uid="uid://d1i0kgivb1axp" path="res://Art/brokenobjects/broken chair front facing.png" id="3_gc5oc"]
+[ext_resource type="AudioStream" uid="uid://7ax6lohfyum2" path="res://Audio/676626__neartheatmoshphere__rip-9-long.wav" id="4_p57bb"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tpnoc"]
 radius = 5.49997
@@ -30,3 +31,6 @@ offset_bottom = -6.0
 [node name="CollisionShape2D" parent="." index="4"]
 position = Vector2(1, 10)
 shape = SubResource("CapsuleShape2D_tpnoc")
+
+[node name="AudioStreamPlayer2D" parent="." index="5"]
+stream = ExtResource("4_p57bb")

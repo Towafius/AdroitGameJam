@@ -7,11 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://beiqmv6x223mi" path="res://Scenes/Entities/Player/player.tscn" id="4_pgld7"]
 [ext_resource type="AudioStream" uid="uid://cnieknaimfody" path="res://Audio/background music.wav" id="5_ah32f"]
 [ext_resource type="PackedScene" uid="uid://upjmadd6ru0q" path="res://Scenes/Objects/FinishedObjects/Breakable_monitor_front.tscn" id="5_gt7q7"]
-[ext_resource type="PackedScene" uid="uid://bv7pvi70pyjcl" path="res://Scenes/Objects/FinishedObjects/breakable_vendingmachine.tscn" id="8_0wmpg"]
+[ext_resource type="PackedScene" uid="uid://htnc67wxwseq" path="res://Scenes/Objects/FinishedObjects/breakable_vendingmachine.tscn" id="8_0wmpg"]
 [ext_resource type="PackedScene" uid="uid://dtgfbw05m6r2h" path="res://Scenes/Objects/FinishedObjects/breakable_talltree.tscn" id="9_q65wr"]
-[ext_resource type="PackedScene" uid="uid://deyr22xov8yjt" path="res://Scenes/Objects/FinishedObjects/breakable_officeplant.tscn" id="10_6r3rg"]
+[ext_resource type="PackedScene" uid="uid://dl4fxvlmv2e03" path="res://Scenes/Objects/FinishedObjects/breakable_officeplant.tscn" id="10_6r3rg"]
 [ext_resource type="PackedScene" uid="uid://dojy6r47w54ye" path="res://Scenes/Objects/FinishedObjects/breakable_trashcanOPEN.tscn" id="11_a1yct"]
-[ext_resource type="PackedScene" path="res://Scenes/Objects/FinishedObjects/breakable_chair.tscn" id="12_5s73q"]
+[ext_resource type="PackedScene" uid="uid://c0f6lrwrafonc" path="res://Scenes/Objects/FinishedObjects/breakable_chair.tscn" id="12_5s73q"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_ah32f"]
 outlines = Array[PackedVector2Array]([PackedVector2Array(-406, 33, 10, 32, 10, 0, 534, 1, 535, 79, 790, 80, 790, 245, 795, 273, 800, 378, 474, 381, 471, 567, 57, 567, 53, 486, 24, 490, 22, 580, -405, 588, -672, 592, -675, 410, -753, 404, -744, 130, -408, 125)])

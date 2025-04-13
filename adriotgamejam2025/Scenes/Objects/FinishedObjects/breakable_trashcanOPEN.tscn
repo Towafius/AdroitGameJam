@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cnn4af3jud27c"]
+[gd_scene load_steps=4 format=3 uid="uid://dojy6r47w54ye"]
 
 [ext_resource type="PackedScene" uid="uid://jjhle048n1ei" path="res://Scenes/Objects/BreakableObject.tscn" id="1_8i2el"]
 [ext_resource type="Texture2D" uid="uid://crpt6733i8ned" path="res://Art/brokenobjects/trashcan OPEN.png" id="2_ie7cd"]
