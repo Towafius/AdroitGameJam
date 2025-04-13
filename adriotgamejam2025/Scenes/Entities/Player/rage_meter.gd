@@ -24,3 +24,6 @@ func _process(delta: float) -> void:
 		set_process(false)
 	player_sprite.set_modulate(Color(1, 1-(self.value/150), 1-(self.value/150)))
 	self.value = rage_amount
+
+func add_rage(amount:int):
+	rage_amount+=amount

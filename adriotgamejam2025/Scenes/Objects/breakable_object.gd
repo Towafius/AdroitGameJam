@@ -3,6 +3,7 @@ extends StaticBody2D
 class_name BreakableObject
 
 @export var max_health:int = 50
+@export var rage_value:float = max_health/5
 
 @onready var unbroken_sprite: Sprite2D = $UnbrokenSprite
 @onready var broken_sprite: Sprite2D = $BrokenSprite
@@ -41,6 +42,8 @@ func take_damage(damage_taken:int):
 		if (health<=0):
 			self.break_object()
 
+func get_rage_amount():
+	return rage_value
 
 func regenerate_object():
 	health = max_health

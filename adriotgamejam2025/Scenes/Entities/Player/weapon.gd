@@ -4,6 +4,7 @@ extends Node2D
 @onready var attack_timer: Timer = $Attack_Timer
 @onready var attack_area: Area2D = $Sprite2D/AttackArea
 @onready var player: CharacterBody2D = $".."
+@onready var rage_meter: TextureProgressBar = $"../CanvasLayer/Rage/RageMeter"
 
 enum Attacks{
 	swing,
@@ -46,6 +47,8 @@ func _handle_attack_frame():
 			if !(body in attack_exceptions):
 				body.take_damage(50)
 				attack_exceptions.append(body)
+				if body.health <=0:
+					rage_meter.add_rage(body.get_rage_amount())
 	
 	
 

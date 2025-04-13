@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://beiqmv6x223mi"]
+[gd_scene load_steps=36 format=3 uid="uid://beiqmv6x223mi"]
 
 [ext_resource type="Script" uid="uid://co4mhxtf1ubni" path="res://Scenes/Entities/Player/player.gd" id="1_a3d8c"]
 [ext_resource type="Script" uid="uid://m2xddct1li7e" path="res://Scenes/Entities/Player/rage_meter.gd" id="2_htcer"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://cswh3ln6miwqe" path="res://Art/UI/RagebarFill.png" id="5_5o8lj"]
 [ext_resource type="Theme" uid="uid://ngnx3f64w8bv" path="res://Art/UI/Base_theme.tres" id="7_5o8lj"]
 [ext_resource type="Texture2D" uid="uid://c7kmtgdm340oh" path="res://Art/UI/BrownPanel.png" id="8_i4twt"]
+[ext_resource type="Script" uid="uid://bac707fgeciyo" path="res://Scenes/Menu/game_over_screen.gd" id="8_p22ti"]
+[ext_resource type="Texture2D" uid="uid://bwa8vupxx27kl" path="res://Art/game over.png" id="9_pc8mt"]
 [ext_resource type="Texture2D" uid="uid://ddddusb5qipdr" path="res://Art/press E sprite.png" id="10_q8fdp"]
 [ext_resource type="Texture2D" uid="uid://dmyvs8y27etxs" path="res://Art/CaughtBarBG.png" id="11_0fwr3"]
 [ext_resource type="Texture2D" uid="uid://c7igui04b0x4j" path="res://Art/CaughtBarFill.png" id="12_pc8mt"]
@@ -375,18 +377,16 @@ libraries = {
 wait_time = 0.6
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="Rage" type="Control" parent="CanvasLayer"]
 layout_mode = 3
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -20.0
-offset_right = 20.0
-offset_bottom = 40.0
 grow_horizontal = 2
 scale = Vector2(3, 3)
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
 [node name="RageMeter" type="TextureProgressBar" parent="CanvasLayer/Rage"]
 layout_mode = 1
@@ -444,6 +444,7 @@ horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="GameOverScreen" type="Control" parent="CanvasLayer"]
+process_mode = 3
 visible = false
 modulate = Color(1, 1, 1, 0.784314)
 layout_mode = 3
@@ -458,6 +459,7 @@ scale = Vector2(3, 3)
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("7_5o8lj")
+script = ExtResource("8_p22ti")
 
 [node name="TextureRect" type="NinePatchRect" parent="CanvasLayer/GameOverScreen"]
 layout_mode = 1
@@ -479,19 +481,42 @@ patch_margin_top = 32
 patch_margin_right = 32
 patch_margin_bottom = 32
 
+[node name="Control" type="Control" parent="CanvasLayer/GameOverScreen/TextureRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 7.5
+offset_top = 14.6667
+offset_right = 7.5
+offset_bottom = 14.6667
+grow_horizontal = 2
+
+[node name="GameOver" type="Sprite2D" parent="CanvasLayer/GameOverScreen/TextureRect/Control"]
+texture = ExtResource("9_pc8mt")
+
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/GameOverScreen/TextureRect"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -28.0
+offset_top = 29.0
+offset_right = 28.0
+offset_bottom = 100.0
+grow_horizontal = 2
 
-[node name="TextureButton" type="TextureButton" parent="CanvasLayer/GameOverScreen/TextureRect/VBoxContainer"]
+[node name="PlayButton" type="Button" parent="CanvasLayer/GameOverScreen/TextureRect/VBoxContainer"]
 layout_mode = 2
+text = "Replay"
 
-[node name="TextureButton2" type="TextureButton" parent="CanvasLayer/GameOverScreen/TextureRect/VBoxContainer"]
+[node name="QuitToMenu" type="Button" parent="CanvasLayer/GameOverScreen/TextureRect/VBoxContainer"]
 layout_mode = 2
+text = "Quit To Menu"
 
-[node name="TextureButton3" type="TextureButton" parent="CanvasLayer/GameOverScreen/TextureRect/VBoxContainer"]
+[node name="QuitButton" type="Button" parent="CanvasLayer/GameOverScreen/TextureRect/VBoxContainer"]
 layout_mode = 2
+text = "Quit"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -536,4 +561,8 @@ texture_under = ExtResource("11_0fwr3")
 texture_progress = ExtResource("12_pc8mt")
 
 [connection signal="timeout" from="WeaponPivot/Attack_Timer" to="WeaponPivot" method="_on_attack_timer_timeout"]
+[connection signal="rage_over" from="CanvasLayer/Rage/RageMeter" to="CanvasLayer/GameOverScreen" method="_on_rage_meter_rage_over"]
+[connection signal="pressed" from="CanvasLayer/GameOverScreen/TextureRect/VBoxContainer/PlayButton" to="CanvasLayer/GameOverScreen" method="_on_play_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/GameOverScreen/TextureRect/VBoxContainer/QuitToMenu" to="CanvasLayer/GameOverScreen" method="_on_quit_to_menu_pressed"]
+[connection signal="pressed" from="CanvasLayer/GameOverScreen/TextureRect/VBoxContainer/QuitButton" to="CanvasLayer/GameOverScreen" method="_on_quit_button_pressed"]
 [connection signal="timeout" from="GracePeriodTimer" to="." method="_on_grace_period_timer_timeout"]
