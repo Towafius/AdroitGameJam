@@ -40,8 +40,10 @@ func break_object():
 	score_text.set_color(Color.YELLOW)
 	rage_text.set_text("+" + str(rage_value))
 	score_text.set_text("+" + str(score_value))
-	rage_text.global_position = health_bar.global_position + Vector2(10,0)
-	score_text.global_position = health_bar.global_position + Vector2(-10,0)
+	rage_text.global_position = health_bar.global_position + Vector2(20,0)
+	score_text.global_position = health_bar.global_position + Vector2(-20,0)
+	rage_text.trigger()
+	score_text.trigger()
 
 
 func take_damage(damage_taken:int) -> bool:

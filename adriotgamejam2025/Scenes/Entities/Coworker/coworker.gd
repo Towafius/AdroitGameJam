@@ -27,11 +27,11 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	if state == states.FOLLOW:
-		if self.global_position.distance_to(player.global_position) < 40:
+		if self.global_position.distance_to(player.global_position) < 50:
 			state = states.ATTACK
 	
 	elif state == states.ATTACK:
-		if self.global_position.distance_to(player.global_position) >= 40:
+		if self.global_position.distance_to(player.global_position) >= 50:
 			state = states.FOLLOW
 			
 	var next_position = nav_agent.get_next_path_position()
@@ -54,7 +54,7 @@ func _physics_process(delta: float) -> void:
 
 	_handle_animation(direction)
 
-	if(self.global_position.distance_to(player.global_position) <= 10):
+	if(self.global_position.distance_to(player.global_position) <= 15):
 		if player.get_caught():
 			state = states.RETREAT
 			var tween = get_tree().create_tween()

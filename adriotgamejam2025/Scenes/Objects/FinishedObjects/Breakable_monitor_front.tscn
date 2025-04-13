@@ -10,6 +10,8 @@ height = 16.0
 
 [node name="BreakableObject" instance=ExtResource("1_1ihgr")]
 max_health = 200
+rage_value = 25.0
+score_value = 250.0
 
 [node name="UnbrokenSprite" parent="." index="0"]
 position = Vector2(7, -16)
@@ -19,10 +21,10 @@ texture = ExtResource("2_easxf")
 position = Vector2(7, -17)
 texture = ExtResource("3_sp556")
 
-[node name="HealthBar" parent="." index="3"]
+[node name="HealthBar" parent="." index="2"]
 offset_top = -20.0
 offset_bottom = -4.0
 
-[node name="CollisionShape2D" parent="." index="5"]
+[node name="CollisionShape2D" parent="." index="4"]
 position = Vector2(0, 1)
 shape = SubResource("CapsuleShape2D_easxf")

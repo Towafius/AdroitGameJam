@@ -5,6 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://cmmberij6whlm" path="res://Art/brokenobjects/broken trash can.png" id="3_ybosg"]
 
 [node name="BreakableObject" instance=ExtResource("1_8i2el")]
+rage_value = 10.0
+score_value = 25.0
 
 [node name="UnbrokenSprite" parent="." index="0"]
 position = Vector2(8, -8)

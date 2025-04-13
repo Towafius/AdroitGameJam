@@ -23,7 +23,7 @@ func _process(delta: float) -> void:
 	else:
 		rage_amount -= decay_rate*delta
 		decay_rate_label.text = "-" + str(float(int(decay_rate*100))/100)
-	decay_rate += .05 * delta
+	decay_rate += .01 * delta
 	
 	if(self.value <= 0):
 		rage_over.emit()
@@ -33,3 +33,6 @@ func _process(delta: float) -> void:
 
 func add_rage(amount:int):
 	rage_amount+=amount
+	if(rage_amount > self.max_value):
+		rage_amount = self.max_value
+	
