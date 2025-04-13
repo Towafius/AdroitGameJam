@@ -7,16 +7,24 @@
 [node name="BreakableObject" instance=ExtResource("1_ibod6")]
 
 [node name="UnbrokenSprite" parent="." index="0"]
+position = Vector2(7, -9)
 texture = ExtResource("2_mepws")
 
 [node name="BrokenSprite" parent="." index="1"]
 texture = ExtResource("3_w5dgw")
 
 [node name="HealthBar" parent="." index="2"]
-offset_left = -16.0
-offset_top = -11.0
-offset_right = 0.0
-offset_bottom = 5.0
+offset_left = -9.0
+offset_top = -20.0
+offset_right = 7.0
+offset_bottom = -4.0
+metadata/_edit_use_anchors_ = true
+
+[node name="SmokeParticles" parent="." index="3"]
+position = Vector2(7, -9)
 
 [node name="CollisionShape2D" parent="." index="4"]
-position = Vector2(-7, 9)
+position = Vector2(0, 0)
+
+[node name="AudioStreamPlayer2D" parent="." index="5"]
+position = Vector2(7, -9)
