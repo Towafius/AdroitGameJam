@@ -1,8 +1,28 @@
-[gd_scene load_steps=5 format=3 uid="uid://cj6qe5g60014"]
+[gd_scene load_steps=8 format=3 uid="uid://cj6qe5g60014"]
 
 [ext_resource type="PackedScene" uid="uid://jjhle048n1ei" path="res://Scenes/Objects/BreakableObject.tscn" id="1_flxl8"]
 [ext_resource type="Texture2D" uid="uid://diudmuckqjqte" path="res://Art/brokenobjects/water cooler.png" id="2_jbdeo"]
 [ext_resource type="Texture2D" uid="uid://bkuh0487l1x35" path="res://Art/brokenobjects/broken water cooler.png" id="3_iafwo"]
+
+[sub_resource type="Curve" id="Curve_jbdeo"]
+_data = [Vector2(0, 0.820225), 0.0, 0.0, 0, 0, Vector2(0.419118, 0.674157), 0.0, 0.0, 0, 0, Vector2(0.772059, 0.0898877), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_iafwo"]
+curve = SubResource("Curve_jbdeo")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_hwtf2"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 15.0
+direction = Vector3(0, -1, 0)
+spread = 30.0
+initial_velocity_min = 9.0
+initial_velocity_max = 9.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.8
+color = Color(0.180392, 0.729412, 0.992157, 0.6)
+alpha_curve = SubResource("CurveTexture_iafwo")
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_flxl8"]
 radius = 7.0
@@ -23,6 +43,9 @@ texture = ExtResource("3_iafwo")
 [node name="HealthBar" parent="." index="2"]
 offset_top = -35.0
 offset_bottom = -19.0
+
+[node name="SmokeParticles" parent="." index="3"]
+process_material = SubResource("ParticleProcessMaterial_hwtf2")
 
 [node name="CollisionShape2D" parent="." index="4"]
 position = Vector2(-1, -6)
