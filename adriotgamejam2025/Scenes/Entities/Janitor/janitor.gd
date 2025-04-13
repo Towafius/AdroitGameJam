@@ -4,24 +4,26 @@ extends CharacterBody2D
 @onready var nav_agent: NavigationAgent2D = $NavigationAgent2D
 @onready var sprite: Sprite2D = $Sprite
 
-const SPEED = 40
+const SPEED = 80
 
 
 var current_speed = SPEED
 var last_direction = Vector2(0,1)
 var repairables:=[]
 var active_target
+var done:bool = false
 
 func _ready() -> void:
 	repairables = GameManager.pop_repairables()
+	print(repairables)
 	_find_next_repair()
 
 func _physics_process(delta: float) -> void:
 	var next_position = nav_agent.get_next_path_position()
 	#var distance = global_position.distance_to(player.global_position)
-	var direction:Vector2=Vector2.ZERO
+	var direction = global_position.direction_to(next_position)
 	
-	if direction:
+	if direction && !done:
 		velocity.x = direction.x * current_speed
 		velocity.y = direction.y * current_speed
 	else:
@@ -37,19 +39,26 @@ func _physics_process(delta: float) -> void:
 
 func _find_next_repair():
 	var list_size = repairables.size()
+	print(list_size)
 	if list_size <= 0:
+		print(str(list_size) + " too small")
 		var tween = get_tree().create_tween()
 		tween.tween_property(sprite, "modulate", Color(1,1,1,0), 3.0)
 		tween.tween_callback(queue_free)
 		return
 	active_target = repairables.pop_at(randi_range(0, list_size-1))
-	nav_agent.target = active_target.global_position
+	print(active_target.global_position)
+	nav_agent.target_position = active_target.global_position
+	nav_agent.set_target_position(active_target.global_position)
+	
+	print("Active target pos:", active_target.global_position)
+	print("Agent current pos:", global_position)
+	print("Distance to target:", global_position.distance_to(active_target.global_position))
 	
 
 func _on_navigation_agent_2d_target_reached() -> void:
-	var tween = get_tree().create_tween()
-	tween.tween_property(sprite, "modulate", Color(1,1,1,1), 3.0)
-	active_target.regen()
+	print("repair reached")
+	active_target.regenerate_object()
 	_find_next_repair()
 
 func _handle_animation(direction:Vector2):
