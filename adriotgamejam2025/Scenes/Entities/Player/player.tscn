@@ -551,13 +551,13 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -132.0
+offset_left = -125.0
 offset_top = 83.0
-offset_right = -46.0
+offset_right = -24.0
 offset_bottom = 121.0
 grow_horizontal = 0
 theme_override_font_sizes/font_size = 48
-text = "0"
+text = "99999"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
