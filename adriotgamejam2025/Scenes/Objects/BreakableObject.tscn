@@ -54,25 +54,6 @@ texture = ExtResource("2_u7637")
 visible = false
 texture = ExtResource("3_u7637")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -127.0
-offset_bottom = 66.0
-grow_horizontal = 0
-
-[node name="Damage" type="Button" parent="CanvasLayer/VBoxContainer"]
-layout_mode = 2
-text = "Damage Object"
-
-[node name="Regen" type="Button" parent="CanvasLayer/VBoxContainer"]
-layout_mode = 2
-text = "Regen Object"
-
 [node name="HealthBar" type="TextureProgressBar" parent="."]
 modulate = Color(1, 1, 1, 0.784314)
 z_index = 1
@@ -106,6 +87,3 @@ process_material = SubResource("ParticleProcessMaterial_obm2q")
 position = Vector2(0, 10)
 rotation = 1.57074
 shape = SubResource("CapsuleShape2D_b6ikd")
-
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/Damage" to="." method="deal_50_damage_to_self_test"]
-[connection signal="pressed" from="CanvasLayer/VBoxContainer/Regen" to="." method="regenerate_object"]

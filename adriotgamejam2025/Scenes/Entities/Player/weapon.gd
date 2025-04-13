@@ -3,6 +3,7 @@ extends Node2D
 @onready var weapon_animator: AnimationPlayer = $WeaponAnimator
 @onready var attack_timer: Timer = $Attack_Timer
 @onready var attack_area: Area2D = $Sprite2D/AttackArea
+@onready var player: CharacterBody2D = $".."
 
 enum Attacks{
 	swing,
@@ -23,7 +24,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	look_at(get_global_mouse_position())
 	
-	if Input.is_action_pressed("attack") && can_attack:
+	if Input.is_action_pressed("attack") && can_attack && player.caught_meter<=0:
 		is_attacking = true
 		if(last_attack != Attacks.swing):
 			last_attack = Attacks.swing

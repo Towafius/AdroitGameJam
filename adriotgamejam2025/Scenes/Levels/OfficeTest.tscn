@@ -21,7 +21,6 @@ baking_rect_offset = Vector2(0, -0.015)
 
 [node name="OfficeTest" type="Node2D"]
 y_sort_enabled = true
-position = Vector2(-8, 7)
 
 [node name="Player" parent="." instance=ExtResource("4_pgld7")]
 position = Vector2(206, 87)

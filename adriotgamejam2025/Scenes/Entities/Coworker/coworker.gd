@@ -73,8 +73,6 @@ func _on_navigation_agent_2d_target_reached() -> void:
 	_on_nav_refresh_timeout()
 
 func _handle_animation(direction:Vector2):
-	if(state == states.ATTACK):
-		return
 	if(direction.is_equal_approx(Vector2.ZERO)):
 		if abs(last_direction.x) > abs(last_direction.y):
 			if last_direction.x > 0:
