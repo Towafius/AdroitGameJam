@@ -483,7 +483,7 @@ visible = false
 position = Vector2(130, 46)
 sprite_frames = SubResource("SpriteFrames_6xq10")
 autoplay = "default"
-frame_progress = 0.820841
+frame_progress = 0.236493
 
 [connection signal="pressed" from="MainMenu/Buttons/PlayButton" to="MainMenu" method="_on_play_button_pressed"]
 [connection signal="pressed" from="MainMenu/Buttons/SettingsButton" to="MainMenu" method="_on_settings_button_pressed"]
