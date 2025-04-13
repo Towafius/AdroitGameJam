@@ -5,7 +5,7 @@ extends CharacterBody2D
 @onready var player: CharacterBody2D = get_tree().get_first_node_in_group("player")
 @onready var sprite: Sprite2D = $Sprite
 
-const coworker_sprites = [preload("res://Art/Coworkers/character helly.png"),preload("res://Art/Coworkers/character mark.png"),preload("res://Art/Coworkers/coworker 2.png"),preload("res://Art/Coworkers/Coworker.png")]
+const coworker_sprites = [preload("res://Art/Coworkers/character helly.png"),preload("res://Art/Coworkers/character mark.png"),preload("res://Art/Coworkers/coworker 2.png"),preload("res://Art/Coworkers/Coworker.png"),preload("res://Art/Coworkers/character dylan.png")]
 const SPEED = 40
 
 var current_speed = SPEED
