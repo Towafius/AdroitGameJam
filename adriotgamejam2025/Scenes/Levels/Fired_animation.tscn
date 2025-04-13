@@ -1,9 +1,12 @@
-[gd_scene load_steps=11 format=4 uid="uid://d4dp1pddgskyp"]
+[gd_scene load_steps=14 format=4 uid="uid://d4dp1pddgskyp"]
 
 [ext_resource type="TileSet" uid="uid://cqgnw2rd2kdmo" path="res://Art/TileSets/OfficeTileMap.tres" id="1_daga8"]
 [ext_resource type="Texture2D" uid="uid://dw5pstmeu4urn" path="res://Art/angry emote.png" id="2_1y2ut"]
+[ext_resource type="Script" uid="uid://crv0kemawwso3" path="res://Scenes/Levels/animation_stuff.gd" id="2_apk5t"]
 [ext_resource type="Texture2D" uid="uid://bpvomlgf8da3s" path="res://Art/Player.png" id="2_d8afr"]
+[ext_resource type="Texture2D" uid="uid://bp6qkfrorc174" path="res://Art/brokenobjects/broken laptop.png" id="4_0iqbm"]
 [ext_resource type="Texture2D" uid="uid://b3h564q8d6o82" path="res://Art/brokenobjects/laptop.png" id="4_7oec5"]
+[ext_resource type="Texture2D" uid="uid://dqqdur6g26424" path="res://Art/baseball bat.png" id="6_db1mr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7oec5"]
 atlas = ExtResource("2_1y2ut")
@@ -29,7 +32,7 @@ animations = [{
 
 [sub_resource type="Animation" id="Animation_a1yct"]
 resource_name = "New_Room_Intro"
-length = 10.0
+length = 12.0
 step = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -38,10 +41,10 @@ tracks/0/path = NodePath("AnimatedPlayer:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.8, 2.4, 3, 3.2, 3.4, 3.6, 3.8, 4, 4.4, 4.6, 4.8, 5, 5.2, 5.4, 6, 6.2, 6.4, 6.6, 6.8, 7, 7.2, 7.4, 7.6, 7.8, 8, 8.2, 8.4),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 1.8, 2.4, 3, 3.2, 3.4, 3.6, 3.8, 4, 4.4, 4.6, 4.8, 5, 5.2, 5.4, 6, 6.2, 6.4, 6.6, 6.8, 7, 7.2, 7.4, 7.6, 7.8, 8, 8.2, 8.4, 8.8, 9, 9.2, 9.4, 9.6, 9.8, 10, 10.2, 10.4, 10.6, 10.8, 11, 11.2, 11.4, 11.6, 11.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [597, 598, 599, 746, 747, 748, 749, 750, 751, 746, 747, 748, 749, 750, 751, 112, 113, 114, 115, 116, 117, 118, 734, 735, 736, 737, 738, 739]
+"values": [597, 598, 599, 746, 747, 748, 749, 750, 751, 746, 747, 748, 749, 750, 751, 112, 113, 114, 115, 116, 117, 118, 734, 735, 736, 737, 738, 739, 75, 76, 77, 78, 79, 75, 76, 77, 78, 79, 75, 76, 77, 78, 79, 75]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -50,10 +53,10 @@ tracks/1/path = NodePath("AngryEmote:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 1.1, 5.8),
-"transitions": PackedFloat32Array(1, 1, 1),
+"times": PackedFloat32Array(0, 1.1, 5.8, 8.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [false, true, false]
+"values": [false, true, false, true]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -66,6 +69,90 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 0.784314, 0.784314, 1), Color(1, 0.784314, 0.784314, 1), Color(1, 1, 1, 1), Color(1, 0.588235, 0.588235, 1), Color(1, 0.588235, 0.588235, 1), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimatedPlayer:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 6, 7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(391, 168), Vector2(391, 168), Vector2(438, 168)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Laptop:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 8.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("BrokenLaptop:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 8.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AngryEmote:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 5.8, 8.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(399, 152), Vector2(399, 152), Vector2(451, 152)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../../BaseballBat:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("AnimatedPlayer/Camera2D:zoom")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 8.8, 12),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(4, 4), Vector2(4, 4), Vector2(3, 3)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("../../CanvasModulate:color")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_5s73q"]
@@ -101,6 +188,90 @@ tracks/2/path = NodePath("AnimatedPlayer:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimatedPlayer:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(438, 168)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Laptop:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("BrokenLaptop:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AngryEmote:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(399, 152)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../../BaseballBat:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("AnimatedPlayer/Camera2D:zoom")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3, 3)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("../../CanvasModulate:color")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
@@ -168,6 +339,7 @@ tile_set = ExtResource("1_daga8")
 
 [node name="AnimationStuff" type="Node2D" parent="Tiles"]
 y_sort_enabled = true
+script = ExtResource("2_apk5t")
 
 [node name="AngryEmote" type="AnimatedSprite2D" parent="Tiles/AnimationStuff"]
 position = Vector2(399, 152)
@@ -189,12 +361,23 @@ hframes = 56
 vframes = 20
 frame = 597
 
-[node name="Camera2D" type="Camera2D" parent="Tiles/AnimationStuff"]
-position = Vector2(390, 174)
+[node name="Camera2D" type="Camera2D" parent="Tiles/AnimationStuff/AnimatedPlayer"]
 zoom = Vector2(3, 3)
+
+[node name="BrokenLaptop" type="Sprite2D" parent="Tiles/AnimationStuff"]
+z_index = 1
+position = Vector2(446, 151)
+texture = ExtResource("4_0iqbm")
 
 [node name="Laptop" type="Sprite2D" parent="Tiles/AnimationStuff"]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(446, 151)
 texture = ExtResource("4_7oec5")
+
+[node name="BaseballBat" type="Sprite2D" parent="."]
+position = Vector2(459, 177)
+rotation = -3.14159
+texture = ExtResource("6_db1mr")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]

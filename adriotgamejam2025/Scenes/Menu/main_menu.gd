@@ -18,4 +18,4 @@ func _on_quit_button_pressed() -> void:
 	get_tree().quit()
 
 func _change_scene():
-	get_tree().change_scene_to_file("res://Scenes/Levels/OfficeTest.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Levels/Fired_animation.tscn")
