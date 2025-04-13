@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://bnyjcax8hglt2"]
+[gd_scene load_steps=15 format=4 uid="uid://bnyjcax8hglt2"]
 
 [ext_resource type="TileSet" uid="uid://cqgnw2rd2kdmo" path="res://Art/TileSets/OfficeTileMap.tres" id="1_kv8hx"]
 [ext_resource type="PackedScene" uid="uid://cj6qe5g60014" path="res://Scenes/Objects/FinishedObjects/breakable_watercooler.tscn" id="2_hhbbg"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dl4fxvlmv2e03" path="res://Scenes/Objects/FinishedObjects/breakable_officeplant.tscn" id="10_6r3rg"]
 [ext_resource type="PackedScene" uid="uid://dojy6r47w54ye" path="res://Scenes/Objects/FinishedObjects/breakable_trashcanOPEN.tscn" id="11_a1yct"]
 [ext_resource type="PackedScene" uid="uid://c0f6lrwrafonc" path="res://Scenes/Objects/FinishedObjects/breakable_chair.tscn" id="12_5s73q"]
+[ext_resource type="PackedScene" path="res://Scenes/Objects/FinishedObjects/breakable_mirror.tscn" id="13_q65wr"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_ah32f"]
 outlines = Array[PackedVector2Array]([PackedVector2Array(-406, 33, 10, 32, 10, 0, 534, 1, 535, 79, 790, 80, 790, 245, 795, 273, 800, 378, 474, 381, 471, 567, 57, 567, 53, 486, 24, 490, 22, 580, -405, 588, -672, 592, -675, 410, -753, 404, -744, 130, -408, 125)])
@@ -242,6 +243,9 @@ position = Vector2(472, 157)
 stream = ExtResource("5_ah32f")
 volume_db = -10.0
 autoplay = true
+
+[node name="BreakableObject" parent="." instance=ExtResource("13_q65wr")]
+position = Vector2(496, 336)
 
 [connection signal="timeout" from="NavigationRegion2D/CoworkerSpawnTimer" to="NavigationRegion2D" method="_on_coworker_spawn_timer_timeout"]
 [connection signal="timeout" from="NavigationRegion2D/CoworkerLimitIncrease" to="NavigationRegion2D" method="_on_coworker_limit_increase_timeout"]
