@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://d4dp1pddgskyp"]
+[gd_scene load_steps=16 format=4 uid="uid://d4dp1pddgskyp"]
 
 [ext_resource type="TileSet" uid="uid://cqgnw2rd2kdmo" path="res://Art/TileSets/OfficeTileMap.tres" id="1_daga8"]
 [ext_resource type="Texture2D" uid="uid://dw5pstmeu4urn" path="res://Art/angry emote.png" id="2_1y2ut"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://bp6qkfrorc174" path="res://Art/brokenobjects/broken laptop.png" id="4_0iqbm"]
 [ext_resource type="Texture2D" uid="uid://b3h564q8d6o82" path="res://Art/brokenobjects/laptop.png" id="4_7oec5"]
 [ext_resource type="Texture2D" uid="uid://dqqdur6g26424" path="res://Art/baseball bat.png" id="6_db1mr"]
+[ext_resource type="AudioStream" uid="uid://cfcf62sp7vb8c" path="res://Audio/swinging bat.wav" id="7_8tgw6"]
+[ext_resource type="AudioStream" uid="uid://wqdxtvi3e7b8" path="res://Audio/breaking object.wav" id="8_4l0aw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7oec5"]
 atlas = ExtResource("2_1y2ut")
@@ -168,6 +170,30 @@ tracks/10/keys = {
 "method": &"change_scence"
 }]
 }
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(3.6, 5, 8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, true]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("AudioStreamPlayer2D2:playing")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(8.4),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_5s73q"]
 length = 0.001
@@ -291,6 +317,30 @@ tracks/9/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("AudioStreamPlayer2D:playing")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("AudioStreamPlayer2D2:playing")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_s7pdx"]
 _data = {
@@ -388,6 +438,15 @@ z_index = 1
 y_sort_enabled = true
 position = Vector2(446, 151)
 texture = ExtResource("4_7oec5")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Tiles/AnimationStuff"]
+stream = ExtResource("7_8tgw6")
+bus = &"SFX"
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="Tiles/AnimationStuff"]
+stream = ExtResource("8_4l0aw")
+volume_db = -4.0
+bus = &"SFX"
 
 [node name="BaseballBat" type="Sprite2D" parent="."]
 position = Vector2(459, 177)
