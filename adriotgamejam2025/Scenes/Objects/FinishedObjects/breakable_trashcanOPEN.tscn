@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dojy6r47w54ye"]
+[gd_scene load_steps=5 format=3 uid="uid://dojy6r47w54ye"]
 
 [ext_resource type="PackedScene" uid="uid://jjhle048n1ei" path="res://Scenes/Objects/BreakableObject.tscn" id="1_8i2el"]
 [ext_resource type="Texture2D" uid="uid://crpt6733i8ned" path="res://Art/brokenobjects/trashcan OPEN.png" id="2_ie7cd"]
 [ext_resource type="Texture2D" uid="uid://cmmberij6whlm" path="res://Art/brokenobjects/broken trash can.png" id="3_ybosg"]
+[ext_resource type="AudioStream" uid="uid://3dct52c43w1l" path="res://Audio/337838__newagesoup__med-metal-hit-02.wav" id="4_ybosg"]
 
 [node name="BreakableObject" instance=ExtResource("1_8i2el")]
 rage_value = 10.0
@@ -23,3 +24,6 @@ offset_bottom = -12.0
 [node name="CollisionShape2D" parent="." index="4"]
 position = Vector2(0, -5)
 rotation = 3.14159
+
+[node name="AudioStreamPlayer2D" parent="." index="5"]
+stream = ExtResource("4_ybosg")
