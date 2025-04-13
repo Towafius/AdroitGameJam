@@ -37,3 +37,7 @@ func _on_coworker_spawn_timer_timeout() -> void:
 	if number_coworkers >= max_coworkers:
 		return
 	spawn_coworker()
+
+
+func _on_coworker_limit_increase_timeout() -> void:
+	max_coworkers+=1
