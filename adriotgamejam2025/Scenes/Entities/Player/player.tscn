@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cswh3ln6miwqe" path="res://Art/UI/RagebarFill.png" id="5_5o8lj"]
 [ext_resource type="Theme" uid="uid://ngnx3f64w8bv" path="res://Art/UI/Base_theme.tres" id="7_5o8lj"]
 [ext_resource type="Texture2D" uid="uid://c7kmtgdm340oh" path="res://Art/UI/BrownPanel.png" id="8_i4twt"]
-[ext_resource type="Script" uid="uid://bac707fgeciyo" path="res://Scenes/Menu/game_over_screen.gd" id="8_p22ti"]
+[ext_resource type="Script" path="res://Scenes/Menu/game_over_screen.gd" id="8_p22ti"]
 [ext_resource type="Texture2D" uid="uid://bwa8vupxx27kl" path="res://Art/game over.png" id="9_pc8mt"]
 [ext_resource type="Texture2D" uid="uid://ddddusb5qipdr" path="res://Art/press E sprite.png" id="10_q8fdp"]
 [ext_resource type="Texture2D" uid="uid://dmyvs8y27etxs" path="res://Art/CaughtBarBG.png" id="11_0fwr3"]
