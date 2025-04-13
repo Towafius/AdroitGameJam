@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://cy58lwiefmley"]
+
+[ext_resource type="PackedScene" uid="uid://jjhle048n1ei" path="res://Scenes/Objects/BreakableObject.tscn" id="1_6d1a5"]
+
+[node name="BreakableObject" instance=ExtResource("1_6d1a5")]
