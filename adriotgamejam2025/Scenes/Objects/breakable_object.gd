@@ -10,6 +10,7 @@ class_name BreakableObject
 @onready var broken_sprite: Sprite2D = $BrokenSprite
 @onready var health_bar: TextureProgressBar = $HealthBar
 @onready var smoke_particles: GPUParticles2D = $SmokeParticles
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 const TEMP_TEXT_LABEL = preload("res://Scenes/Objects/temp_text_label.tscn")
 
@@ -42,6 +43,7 @@ func break_object():
 	score_text.set_text("+" + str(score_value))
 	rage_text.global_position = health_bar.global_position + Vector2(20,0)
 	score_text.global_position = health_bar.global_position + Vector2(-20,0)
+	audio_stream_player_2d.play()
 	rage_text.trigger()
 	score_text.trigger()
 

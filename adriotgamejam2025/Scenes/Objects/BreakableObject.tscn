@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://jjhle048n1ei"]
+[gd_scene load_steps=14 format=3 uid="uid://jjhle048n1ei"]
 
 [ext_resource type="Script" uid="uid://bpw32hn6qd5dt" path="res://Scenes/Objects/breakable_object.gd" id="1_6bgdp"]
 [ext_resource type="Shader" uid="uid://bjq03t15y2r74" path="res://Scenes/Objects/Outline.gdshader" id="2_obm2q"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dgulw6rixcahh" path="res://Art/dustparticle.png" id="4_b6ikd"]
 [ext_resource type="Texture2D" uid="uid://lyclhvbbmlnn" path="res://Art/UI/ObjectHealthBar.png" id="4_jg0c0"]
 [ext_resource type="Texture2D" uid="uid://bv537hm1166xv" path="res://Art/UI/ObjectHealthBarFill.png" id="5_obm2q"]
+[ext_resource type="AudioStream" uid="uid://wqdxtvi3e7b8" path="res://Audio/breaking object.wav" id="8_eomwh"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_eomwh"]
 shader = ExtResource("2_obm2q")
@@ -42,7 +43,7 @@ height = 36.0
 
 [node name="BreakableObject" type="StaticBody2D"]
 y_sort_enabled = true
-collision_layer = 5
+collision_layer = 4
 collision_mask = 4
 script = ExtResource("1_6bgdp")
 
@@ -87,3 +88,7 @@ process_material = SubResource("ParticleProcessMaterial_obm2q")
 position = Vector2(0, 10)
 rotation = 1.57074
 shape = SubResource("CapsuleShape2D_b6ikd")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_eomwh")
+bus = &"SFX"
