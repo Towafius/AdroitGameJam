@@ -9,7 +9,6 @@ radius = 7.0
 height = 28.0
 
 [node name="BreakableObject" instance=ExtResource("1_flxl8")]
-visible = false
 rage_value = 10.0
 score_value = 50.0
 
@@ -18,7 +17,6 @@ position = Vector2(8, -7)
 texture = ExtResource("2_jbdeo")
 
 [node name="BrokenSprite" parent="." index="1"]
-visible = true
 position = Vector2(9, -7)
 texture = ExtResource("3_iafwo")
 
