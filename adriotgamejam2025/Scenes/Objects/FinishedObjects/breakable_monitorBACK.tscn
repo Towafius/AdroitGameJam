@@ -5,6 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://b818c1tyuvhvi" path="res://Art/brokenobjects/broken white monitor back.png" id="2_oupna"]
 
 [node name="BreakableObject" instance=ExtResource("1_qkt51")]
+rage_value = 40.0
+score_value = 200.0
 
 [node name="UnbrokenSprite" parent="." index="0"]
 position = Vector2(7, -10)

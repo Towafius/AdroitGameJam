@@ -6,6 +6,8 @@
 [ext_resource type="AudioStream" uid="uid://cplsky60awuv" path="res://Audio/260434__roganmcdougald__glass-break-medium-jar.wav" id="4_pb2ot"]
 
 [node name="BreakableObject" instance=ExtResource("1_fbgg1")]
+rage_value = 40.0
+score_value = 200.0
 
 [node name="UnbrokenSprite" parent="." index="0"]
 texture = ExtResource("2_0bv8j")

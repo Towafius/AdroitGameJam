@@ -5,6 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://da4mqrrc315f1" path="res://Art/brokenobjects/broken severance pc.png" id="3_mkybm"]
 
 [node name="BreakableObject" instance=ExtResource("1_r5e3w")]
+max_health = 150
+rage_value = 30.0
+score_value = 200.0
 
 [node name="UnbrokenSprite" parent="." index="0"]
 texture = ExtResource("2_lcd0w")

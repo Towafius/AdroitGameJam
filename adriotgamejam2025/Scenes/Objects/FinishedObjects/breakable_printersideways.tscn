@@ -5,6 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://ceuj0wa0i8mmh" path="res://Art/brokenobjects/broken printer sideways.png" id="3_w5dgw"]
 
 [node name="BreakableObject" instance=ExtResource("1_ibod6")]
+max_health = 200
+rage_value = 30.0
+score_value = 250.0
 
 [node name="UnbrokenSprite" parent="." index="0"]
 position = Vector2(7, -9)
