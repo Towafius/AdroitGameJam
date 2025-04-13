@@ -14,9 +14,8 @@ texture = ExtResource("2_hy1u2")
 position = Vector2(8, -7)
 texture = ExtResource("3_iyb1t")
 
-[node name="HealthBar" parent="." index="2"]
-offset_top = -19.0
-offset_bottom = -3.0
-
 [node name="CollisionShape2D" parent="." index="4"]
 position = Vector2(0, 4)
+
+[node name="AudioStreamPlayer2D" parent="." index="5"]
+volume_db = -6.815
