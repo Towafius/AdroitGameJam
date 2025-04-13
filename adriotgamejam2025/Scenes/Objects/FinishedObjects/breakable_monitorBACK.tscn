@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://tv0fh06g3qqg"]
+
+[ext_resource type="PackedScene" uid="uid://jjhle048n1ei" path="res://Scenes/Objects/BreakableObject.tscn" id="1_qkt51"]
+[ext_resource type="Texture2D" uid="uid://dmig0n3pbhbyk" path="res://Art/brokenobjects/monitor BACK.png" id="2_fwxly"]
+[ext_resource type="Texture2D" uid="uid://b818c1tyuvhvi" path="res://Art/brokenobjects/broken white monitor back.png" id="2_oupna"]
+
+[node name="BreakableObject" instance=ExtResource("1_qkt51")]
+
+[node name="UnbrokenSprite" parent="." index="0"]
+position = Vector2(7, -10)
+texture = ExtResource("2_fwxly")
+
+[node name="BrokenSprite" parent="." index="1"]
+position = Vector2(8, -10)
+texture = ExtResource("2_oupna")
+
+[node name="HealthBar" parent="." index="2"]
+offset_top = -18.0
+offset_bottom = -2.0
