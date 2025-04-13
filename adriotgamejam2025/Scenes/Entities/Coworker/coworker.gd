@@ -5,6 +5,7 @@ extends CharacterBody2D
 @onready var player: CharacterBody2D = get_tree().get_first_node_in_group("player")
 @onready var sprite: Sprite2D = $Sprite
 
+const coworker_sprites = [preload("res://Art/Coworker.png"), preload("res://Art/coworker 2.png")]
 const SPEED = 40
 
 
@@ -20,6 +21,7 @@ enum states{
 var state := states.FOLLOW
 
 func _ready() -> void:
+	sprite.texture = coworker_sprites.pick_random()
 	nav_agent.target_position = player.global_position
 	state = states.FOLLOW
 
@@ -57,7 +59,7 @@ func _physics_process(delta: float) -> void:
 			state = states.RETREAT
 			var tween = get_tree().create_tween()
 			tween.tween_property(sprite, "modulate", Color(1,1,1,0), 3.0)
-			
+			tween.tween_callback(queue_free)
 	
 	if(direction):
 		last_direction = direction
