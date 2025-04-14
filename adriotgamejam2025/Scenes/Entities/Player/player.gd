@@ -15,6 +15,7 @@ var grace_period_active := false
 
 func _ready() -> void:
 	GameManager.reset_repairables()
+	GameManager.reset_score()
 
 func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.

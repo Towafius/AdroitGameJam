@@ -9,6 +9,10 @@ func add_score(amount: float) -> void:
 	score += amount
 	score_updated.emit(score)
 
+func reset_score() -> void:
+	score = 0
+	score_updated.emit(score)
+
 # Volume control
 func set_bus_volume(bus_name: String, value: float) -> void:
 	# Clamp to a safe decibel range; Godot uses dB from -80 to 0

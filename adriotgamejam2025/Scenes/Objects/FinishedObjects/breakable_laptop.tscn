@@ -10,12 +10,14 @@ rage_value = 20.0
 score_value = 150.0
 
 [node name="UnbrokenSprite" parent="." index="0"]
-position = Vector2(8, -7)
+position = Vector2(0, 9)
 texture = ExtResource("2_hy1u2")
+offset = Vector2(8, -16)
 
 [node name="BrokenSprite" parent="." index="1"]
-position = Vector2(8, -7)
+position = Vector2(0, 9)
 texture = ExtResource("3_iyb1t")
+offset = Vector2(8, -16)
 
 [node name="CollisionShape2D" parent="." index="4"]
 position = Vector2(0, 4)
