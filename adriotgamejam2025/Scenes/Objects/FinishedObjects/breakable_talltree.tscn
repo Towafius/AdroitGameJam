@@ -15,12 +15,14 @@ rage_value = 30.0
 score_value = 150.0
 
 [node name="UnbrokenSprite" parent="." index="0"]
-position = Vector2(7, 0)
+position = Vector2(0, 14)
 texture = ExtResource("2_5p76v")
+offset = Vector2(7, -14)
 
 [node name="BrokenSprite" parent="." index="1"]
-position = Vector2(7, 0)
+position = Vector2(0, 14)
 texture = ExtResource("3_bkue3")
+offset = Vector2(7, -14)
 
 [node name="HealthBar" parent="." index="2"]
 offset_top = -27.0

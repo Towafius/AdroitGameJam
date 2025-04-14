@@ -14,17 +14,25 @@ rage_value = 25.0
 score_value = 250.0
 
 [node name="UnbrokenSprite" parent="." index="0"]
-position = Vector2(7, -16)
+position = Vector2(0, 4)
 texture = ExtResource("2_easxf")
+offset = Vector2(7, -21)
 
 [node name="BrokenSprite" parent="." index="1"]
-position = Vector2(7, -17)
+position = Vector2(0, 4)
 texture = ExtResource("3_sp556")
+offset = Vector2(7, -21)
 
 [node name="HealthBar" parent="." index="2"]
-offset_top = -20.0
-offset_bottom = -4.0
+offset_top = -21.0
+offset_bottom = -5.0
+
+[node name="SmokeParticles" parent="." index="3"]
+position = Vector2(0, -1)
 
 [node name="CollisionShape2D" parent="." index="4"]
-position = Vector2(0, 1)
+position = Vector2(0, 0)
 shape = SubResource("CapsuleShape2D_easxf")
+
+[node name="AudioStreamPlayer2D" parent="." index="5"]
+position = Vector2(0, -1)

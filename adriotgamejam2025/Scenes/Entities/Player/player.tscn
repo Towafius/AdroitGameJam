@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://beiqmv6x223mi"]
+[gd_scene load_steps=41 format=3 uid="uid://beiqmv6x223mi"]
 
 [ext_resource type="Script" uid="uid://co4mhxtf1ubni" path="res://Scenes/Entities/Player/player.gd" id="1_a3d8c"]
 [ext_resource type="Script" uid="uid://m2xddct1li7e" path="res://Scenes/Entities/Player/rage_meter.gd" id="2_htcer"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://ef7pe5x3xa0d" path="res://Art/UI/RagebarOutline.png" id="4_75l7y"]
 [ext_resource type="AudioStream" uid="uid://cfcf62sp7vb8c" path="res://Audio/swinging bat.wav" id="4_s4doi"]
 [ext_resource type="Texture2D" uid="uid://cswh3ln6miwqe" path="res://Art/UI/RagebarFill.png" id="5_5o8lj"]
+[ext_resource type="Script" uid="uid://o0nx6yubxrjs" path="res://Scenes/Entities/Player/canvas_layer.gd" id="5_l6pm8"]
 [ext_resource type="Theme" uid="uid://ngnx3f64w8bv" path="res://Art/UI/Base_theme.tres" id="7_5o8lj"]
 [ext_resource type="Texture2D" uid="uid://c7kmtgdm340oh" path="res://Art/UI/BrownPanel.png" id="8_i4twt"]
 [ext_resource type="Script" uid="uid://bac707fgeciyo" path="res://Scenes/Menu/game_over_screen.gd" id="8_p22ti"]
@@ -413,6 +414,8 @@ stream = ExtResource("4_s4doi")
 bus = &"SFX"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+script = ExtResource("5_l6pm8")
 
 [node name="Rage" type="Control" parent="CanvasLayer"]
 layout_mode = 3
@@ -481,7 +484,6 @@ vertical_alignment = 1
 
 [node name="GameOverScreen" type="Control" parent="CanvasLayer"]
 process_mode = 3
-visible = false
 modulate = Color(1, 1, 1, 0.784314)
 layout_mode = 3
 anchors_preset = 8
